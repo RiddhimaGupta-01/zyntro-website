@@ -1,11 +1,26 @@
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar.jsx";
+import Hero from "../components/Hero/Hero.jsx";
+import Services from "../components/Services/Services.jsx";
+import About from "../components/About/About.jsx";
+import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs.jsx";
+
+import Footer from "../components/Footer/Footer.jsx";
+import Technologies from "../components/Technologies/Technologies.jsx";
+import HomeContact from "../components/Home/HomeContact";
 
 const Home = () => {
   return (
     <>
-    <Navbar/>
-    </>
-  )
-}
+      <Navbar />
+      <Hero />
+      <Services />
+      <Technologies />
+      <WhyChooseUs />
 
-export default Home
+      <HomeContact />
+      <Footer />
+    </>
+  );
+};
+
+export default Home;

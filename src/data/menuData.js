@@ -1,4 +1,3 @@
-
 export const menuItems = [
   {
     title: "Home",
@@ -6,6 +5,7 @@ export const menuItems = [
   },
   {
     title: "About",
+    path: "/about",
     submenu: [
       {
         title: "About Us",
@@ -19,6 +19,7 @@ export const menuItems = [
   },
   {
     title: "Services",
+    path: "/services",
     submenu: [
       {
         title: "Android Zero Touch Enrollment",
@@ -55,11 +56,15 @@ export const menuItems = [
       {
         title: "Digital Marketing",
         path: "/services/digital-marketing",
+      },   {
+        title: "Cloud Computing",
+        path: "/services/cloud-computing",
       },
     ],
   },
   {
     title: "Industries",
+    path: "/industries",
     submenu: [
       {
         title: "Accounting & Finance",
@@ -78,13 +83,10 @@ export const menuItems = [
         path: "/industries/government-public",
       },
       {
-        title: "Legal",
+        title: "Legal & Law Firm",
         path: "/industries/legal",
       },
-      {
-        title: "Law Firm",
-        path: "/industries/law-firm",
-      },
+      
       {
         title: "Manufacturing",
         path: "/industries/manufacturing",
@@ -93,6 +95,7 @@ export const menuItems = [
   },
   {
     title: "Upcoming Projects",
+    path: "/projects",
     submenu: [
       {
         title: "Smart Watch with MDM",
