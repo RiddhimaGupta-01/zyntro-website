@@ -13,10 +13,10 @@ const Footer = () => {
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.1 }}
       className="relative overflow-hidden bg-gradient-to-br
 from-[#050816]
-via-[#0B0A20]
+via-[#0e0d29]
 to-[#1A1035] border-t border-white/10 "
     >
       {/* Background Glow */}

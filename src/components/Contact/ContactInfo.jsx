@@ -36,11 +36,7 @@ const contactCards = [
 
 
     },
-    {
-        icon: FaClock,
-        title: "Working Hours",
-        value: "Mon - Sat | 9:30 AM - 6:30 PM",
-    },
+   
 ];
 
 const highlights = [
@@ -95,17 +91,21 @@ const ContactInfo = () => {
                     initial={{ opacity: 0, x: 40 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-                >
+                  className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {contactCards.map((card, index) => {
                         const Icon = card.icon;
 
                         return (
-                            <motion.div
-                                key={index}
-                                whileHover={{ y: -8 }}
-                                className="rounded-3xl border border-white/10 bg-[#0B1220] p-6 hover:border-cyan-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,.25)]"
-                            >
+                           <motion.div
+    key={index}
+    whileHover={{ y: -8 }}
+    className={`rounded-3xl border border-white/10 bg-[#0B1220] p-6
+    hover:border-cyan-400 transition-all duration-300
+    hover:shadow-[0_0_30px_rgba(59,130,246,.25)]
+   ${card.title === "Office Address"
+  ? "md:col-span-2"
+  : ""}`}
+>
                                 <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-cyan-400 text-xl">
                                     <Icon />
                                 </div>
@@ -114,19 +114,24 @@ const ContactInfo = () => {
                                     {card.title}
                                 </h3>
                                 {card.details ? (
-                                    <div className="mt-4 space-y-4">
-                                        {card.details.map((item, i) => (
-                                            <div key={i}>
-                                                <h4 className="font-semibold text-white">
-                                                    {item.label}
-                                                </h4>
+                                   
+                                <div className="mt-6 grid md:grid-cols-5 gap-8">
+  {card.details.map((item, i) => (
+  <div
+    key={i}
+    className={i === 0 ? "md:col-span-2" : "md:col-span-3"}
+  >
+      <h4 className="text-white font-semibold text-lg mb-3">
+        {item.label}
+      </h4>
 
-                                                <p className="mt-1 text-sm leading-6 text-gray-400">
-                                                    {item.text}
-                                                </p>
-                                            </div>
-                                        ))}
-                                    </div>
+      <p className="text-gray-400 leading-7">
+        {item.text}
+      </p>
+    </div>
+  ))}
+</div>
+  
                                 ) : card.link ? (
                                     <a
                                         href={card.link}

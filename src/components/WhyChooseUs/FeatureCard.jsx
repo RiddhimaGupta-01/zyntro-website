@@ -10,15 +10,21 @@ const FeatureCard = ({ feature }) => {
         scale: 1.02,
       }}
       transition={{ duration: 0.3 }}
-      className="
-      group 
-      rounded-2xl 
-      border border-white/10 
-      bg-[#0B1220] 
-      p-3 sm:p-8
-      transition-all duration-300 
-      hover:border-blue-500
-      "
+     className="
+group
+relative
+overflow-hidden
+rounded-3xl
+border border-white/10
+bg-[#0B1220]/90
+p-3 sm:p-8
+backdrop-blur-xl
+transition-all
+duration-500
+hover:-translate-y-3
+hover:border-blue-500/40
+hover:shadow-[0_0_45px_rgba(37,99,235,0.25)]
+"
     >
 
       <div
@@ -35,6 +41,10 @@ const FeatureCard = ({ feature }) => {
         group-hover:scale-110
         "
       >
+        {/* Hover Glow */}
+<div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+  <div className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl" />
+</div>
         <Icon className="text-xl sm:text-3xl" />
       </div>
 

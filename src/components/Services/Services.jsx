@@ -28,9 +28,9 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-blue-600 text-4xl font-bold text-center">
-            Our Comprehensive Services
-          </h2>
+       <h2 className="text-center text-5xl font-bold text-white">
+  Our <span className="text-blue-500">Comprehensive </span> Services
+</h2>
         </motion.div>
 
         <motion.h4
@@ -52,19 +52,23 @@ const Services = () => {
       Delivering innovation with confidence and reliability
         </motion.p>
         
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-         className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-6"
-        >
-          {services.map((service, index) => (
-            <motion.div key={index} variants={cardVariant}>
-              <ServiceCard service={service} />
-            </motion.div>
-          ))}
-        </motion.div>
+   <motion.div
+  variants={staggerContainer}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6"
+>
+  {services.map((service, index) => (
+    <motion.div
+      key={index}
+      variants={cardVariant}
+      className="h-full"
+    >
+      <ServiceCard service={service} />
+    </motion.div>
+  ))}
+</motion.div>
 
       </div>
     </section>

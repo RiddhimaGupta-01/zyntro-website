@@ -40,7 +40,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-6 py-14">
           <div className="text-center max-w-4xl mx-auto">
 
-  <div className="flex items-center justify-center py-10 gap-4 mb-6">
+  <div className="flex items-center justify-center py-10 mt-20 gap-4 mb-2">
 
     <span className="inline-block h-[2px] w-16 bg-gradient-to-r from-transparent to-blue-400"></span>
 
@@ -145,11 +145,9 @@ const About = () => {
   <div className="max-w-7xl mx-auto">
 
     <div className="text-center mb-12">
-      <h2 className="text-4xl md:text-5xl font-bold">
-        Why Choose
-        <span className="block bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          Zyntro
-        </span>
+      <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        Why Choose Zyntro
+      
       </h2>
 
       <p className="mt-4 text-gray-400 max-w-2xl mx-auto">

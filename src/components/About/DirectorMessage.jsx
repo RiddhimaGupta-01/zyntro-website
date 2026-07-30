@@ -14,7 +14,7 @@ const DirectorMessage = () => {
       {/* Hero */}
       <section className="max-w-4xl py-20  mx-auto text-center">
 
-<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+<h1 className="text-4xl sm:text-5xl md:text-6xl mt-20 font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
 
    
           Leadership Message

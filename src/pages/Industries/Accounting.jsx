@@ -32,7 +32,7 @@ const Accounting = () => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center -mt-8">
 
             {/* Left Image */}
-            <div className="relative flex justify-center lg:justify-start">
+         <div className="relative flex justify-center items-center h-[220px] sm:h-[280px] lg:h-[380px]">
               <div className="absolute w-[420px] h-[420px] rounded-full bg-blue-500/20 blur-[100px]"></div>
 
               <div className="absolute w-[280px] h-[280px] rounded-full bg-purple-500/15 blur-[80px] top-10 right-10"></div>
@@ -40,7 +40,7 @@ const Accounting = () => {
               <img
                 src={accountingGif}
                 alt="Accounting & Finance"
-                className="relative z-10 w-full max-w-lg object-contain rounded-3xl"
+                className="relative z-10 max-h-full w-auto max-w-full object-contain"
               />
             </div>
 

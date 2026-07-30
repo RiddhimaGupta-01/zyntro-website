@@ -18,7 +18,7 @@ const Energy = () => {
             </div>
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center -mt-8">
             {/* Left Image */}
-            <div className="relative flex justify-center lg:justify-start">
+      <div className="relative flex justify-center items-center h-[220px] sm:h-[280px] lg:h-[380px]">
               {/* Blue Glow */}
               <div className="absolute w-[420px] h-[420px] rounded-full bg-blue-500/20 blur-[100px]"></div>
 
@@ -29,7 +29,7 @@ const Energy = () => {
               <img
                 src={energyGif}
                 alt="Energy & Utilities"
-                className="relative z-10 w-full max-w-xl object-contain rounded-3xl"
+            className="relative z-10 max-h-full w-auto max-w-full object-contain"
               />
             </div>
 

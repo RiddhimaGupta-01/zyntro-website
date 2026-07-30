@@ -102,8 +102,8 @@ export const menuItems = [
         path: "/projects/smart-watch-mdm",
       },
       {
-        title: "Finance Approved Tablet & Phone",
-        path: "/projects/finance-approved-tablet-phone",
+        title: "Finance Approved Tablet & Laptop",
+        path: "/projects/finance-approved-tablet-laptop",
       },
       {
         title: "VR Glasses",

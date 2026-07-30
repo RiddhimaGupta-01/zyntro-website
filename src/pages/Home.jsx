@@ -7,6 +7,8 @@ import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 import Technologies from "../components/Technologies/Technologies.jsx";
 import HomeContact from "../components/Home/HomeContact";
+import Portfolio from "./Portfolio.jsx";
+import HomePortfolio from "../components/Home/HomePortfolio.jsx";
 
 const Home = () => {
   return (
@@ -16,7 +18,7 @@ const Home = () => {
       <Services />
       <Technologies />
       <WhyChooseUs />
-
+      <HomePortfolio/>
       <HomeContact />
       <Footer />
     </>
