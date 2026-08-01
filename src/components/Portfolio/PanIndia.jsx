@@ -3,12 +3,8 @@ import indiaMap from "../../assets/portfolio/india.png";
 
 const PanIndia = () => {
   return (
-    <section className="relative overflow-hidden bg-[#06183a] py-20 lg:py-24">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-blue-600/10 blur-[120px]" />
-        <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-cyan-500/10 blur-[140px]" />
-      </div>
+    <section className="relative overflow-hidden py-20 lg:py-24">
+      
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2">

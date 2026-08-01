@@ -1,194 +1,400 @@
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import GlobalBackground from "../GlobalBackground/GlobalBackground";
 
 const HomeContact = () => {
   return (
-    <section
-      className="
-relative
-py-20
-bg-[#050816]
-overflow-hidden
-"
-    >
-      <div
-        className="
-absolute
-top-0
-left-1/4
-w-72
-h-72
-bg-blue-500/20
-blur-[120px]
-rounded-full
-"
-      ></div>
-        <div
-          className="
-absolute
-bottom-0
-right-1/4
-w-72
-h-72
-bg-purple-500/20
-blur-[120px]
-rounded-full
-"
-        ></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section className="relative overflow-hidden py-20">
+      <GlobalBackground />
 
-  <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Left Content */}
-          <div>
-            <p className="text-blue-400 uppercase tracking-widest text-lg">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
+
+          {/* ================= LEFT CONTENT ================= */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -100,
+              scale: 0.96,
+              filter: "blur(8px)",
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              scale: 1,
+              filter: "blur(0px)",
+            }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              duration: 1.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            {/* Small Heading */}
+            <p className="text-lg uppercase tracking-widest text-blue-400">
               Get In Touch
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
+            {/* Main Heading */}
+            <h2 className="mt-4 text-4xl font-bold leading-tight text-white md:text-5xl">
               Let's Build Your Next
-              <span className="block text-blue-400">Digital Experience</span>
+              <span className="mt-1 block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Digital Experience
+              </span>
             </h2>
 
-            <p className="text-gray-400 mt-5 leading-relaxed">
+            {/* Description */}
+            <p className="mt-5 max-w-xl leading-relaxed text-gray-400">
               Have a project idea or need help with your digital solution?
               Connect with our team and let's turn your vision into reality.
             </p>
 
-            <div className="mt-6 space-y-3">
-              <div className="flex items-center gap-4 text-gray-300">
-                <FaPhoneAlt className="text-blue-400" />
-                <span>+91 8787044997</span>
-              </div>
+            {/* Contact Details */}
+            <div className="mt-7 space-y-4">
 
-              <div className="flex items-center gap-4 text-gray-300">
-                <FaEnvelope className="text-purple-400" />
+              {/* Phone */}
+              <motion.a
+                href="tel:+918787044997"
+                whileHover={{ x: 6 }}
+                transition={{
+                  duration: 0.35,
+                  ease: "easeOut",
+                }}
+                className="
+                  flex
+                  w-fit
+                  items-center
+                  gap-4
+                  text-gray-300
+                  transition-colors
+                  hover:text-blue-400
+                "
+              >
+                <span
+                  className="
+                    flex
+                    h-10
+                    w-10
+                    items-center
+                    justify-center
+                    rounded-xl
+                    border
+                    border-blue-400/20
+                    bg-blue-500/10
+                  "
+                >
+                  <FaPhoneAlt className="text-sm text-blue-400" />
+                </span>
+
+                <span>+91 8787044997</span>
+              </motion.a>
+
+              {/* Email */}
+              <motion.a
+                href="mailto:info@zyntro.in"
+                whileHover={{ x: 6 }}
+                transition={{
+                  duration: 0.35,
+                  ease: "easeOut",
+                }}
+                className="
+                  flex
+                  w-fit
+                  items-center
+                  gap-4
+                  text-gray-300
+                  transition-colors
+                  hover:text-purple-400
+                "
+              >
+                <span
+                  className="
+                    flex
+                    h-10
+                    w-10
+                    items-center
+                    justify-center
+                    rounded-xl
+                    border
+                    border-purple-400/20
+                    bg-purple-500/10
+                  "
+                >
+                  <FaEnvelope className="text-sm text-purple-400" />
+                </span>
+
                 <span>info@zyntro.in</span>
-              </div>
+              </motion.a>
             </div>
 
             {/* Stats */}
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <div
-                className="
-      bg-white/5
-      border border-white/10
-      rounded-xl
-      p-4
-    "
-              >
-                <h4 className="text-white font-bold text-xl">500+</h4>
-                <p className="text-gray-400 text-sm">Projects Completed</p>
-              </div>
+            <div className="mt-8 grid max-w-md grid-cols-2 gap-4">
 
-              <div
+              {/* Projects */}
+              <motion.div
+                whileHover={{
+                  y: -5,
+                  scale: 1.02,
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="
-      bg-white/5
-      border border-white/10
-      rounded-xl
-      p-4
-    "
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-white/5
+                  p-4
+                  backdrop-blur-sm
+                  transition-colors
+                  hover:border-blue-400/30
+                "
               >
-                <h4 className="text-white font-bold text-xl">24/7</h4>
-                <p className="text-gray-400 text-sm">Support</p>
-              </div>
+                <h4 className="text-xl font-bold text-white">
+                  500+
+                </h4>
+
+                <p className="mt-1 text-sm text-gray-400">
+                  Projects Completed
+                </p>
+              </motion.div>
+
+              {/* Support */}
+              <motion.div
+                whileHover={{
+                  y: -5,
+                  scale: 1.02,
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-white/5
+                  p-4
+                  backdrop-blur-sm
+                  transition-colors
+                  hover:border-purple-400/30
+                "
+              >
+                <h4 className="text-xl font-bold text-white">
+                  24/7
+                </h4>
+
+                <p className="mt-1 text-sm text-gray-400">
+                  Support
+                </p>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Form */}
-          <motion.form
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br 
-from-white/10 
-to-white/5
-backdrop-blur-xl
-border border-white/10
-shadow-2xl
-shadow-blue-500/10
-          
-            rounded-2xl
-            p-8
-            "
-          >
-            <h3 className="text-2xl font-semibold text-white mb-6">
-              Contact Us
-            </h3>
-
-            <input
-              type="text"
-              placeholder="Your Name"
+          {/* ================= RIGHT CONTACT FORM ================= */}
+        <motion.form
+  initial={{
+    opacity: 0,
+    x: 60,
+  }}
+  whileInView={{
+    opacity: 1,
+    x: 0,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.2,
+  }}
+  transition={{
+    duration: 0.7,
+    ease: "easeOut",
+  }}
+  className="
+    group
+    relative
+    rounded-2xl
+    border
+    border-white/10
+    bg-gradient-to-br
+    from-white/10
+    to-white/5
+    p-8
+    shadow-2xl
+    shadow-blue-500/10
+    backdrop-blur-xl
+    transition-all
+    duration-500
+    hover:border-blue-400/30
+    hover:shadow-[0_25px_80px_rgba(59,130,246,0.15)]
+  "
+>
+            {/* Form Glow */}
+            <div
               className="
-              w-full mb-4
-              bg-white/10
-              border border-white/10
-              rounded-lg
-              px-4 py-3
-              text-white
-              outline-none
+                pointer-events-none
+                absolute
+                inset-0
+                rounded-2xl
+                bg-gradient-to-br
+                from-blue-500/10
+                via-transparent
+                to-purple-500/10
+                opacity-0
+                blur-xl
+                transition-opacity
+                duration-500
+                group-hover:opacity-100
               "
             />
 
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="
-              w-full mb-4
-              bg-white/10
-              border border-white/10
-              rounded-lg
-              px-4 py-3
-              text-white
-              outline-none
-              "
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="
-              w-full mb-4
-              bg-white/10
-              border border-white/10
-              rounded-lg
-              px-4 py-3
-              text-white
-              outline-none
-              "
-            />
+            <div className="relative z-10">
 
-            <textarea
-              rows="4"
-              placeholder="Your Message"
-              className="
-              w-full
-              bg-white/10
-              border border-white/10
-              rounded-lg
-              px-4 py-3
-              text-white
-              outline-none
-              "
-            />
+              {/* Form Heading */}
+              <h3 className="mb-6 text-2xl font-semibold text-white">
+                Contact Us
+              </h3>
 
-            <button
-              className="
-              mt-5
-              w-full
-              py-3
-              rounded-lg
-              bg-gradient-to-r
-              from-blue-500
-              to-purple-600
-              text-white
-              font-semibold
-              "
-            >
-              Send Message
-            </button>
+              {/* Name */}
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="
+                  mb-4
+                  w-full
+                  rounded-lg
+                  border
+                  border-white/10
+                  bg-white/10
+                  px-4
+                  py-3
+                  text-white
+                  outline-none
+                  placeholder:text-gray-500
+                  transition-all
+                  duration-300
+                  focus:border-blue-400/50
+                  focus:bg-white/[0.12]
+                  focus:ring-2
+                  focus:ring-blue-500/10
+                "
+              />
+
+              {/* Email */}
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="
+                  mb-4
+                  w-full
+                  rounded-lg
+                  border
+                  border-white/10
+                  bg-white/10
+                  px-4
+                  py-3
+                  text-white
+                  outline-none
+                  placeholder:text-gray-500
+                  transition-all
+                  duration-300
+                  focus:border-purple-400/50
+                  focus:bg-white/[0.12]
+                  focus:ring-2
+                  focus:ring-purple-500/10
+                "
+              />
+
+              {/* Phone */}
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                className="
+                  mb-4
+                  w-full
+                  rounded-lg
+                  border
+                  border-white/10
+                  bg-white/10
+                  px-4
+                  py-3
+                  text-white
+                  outline-none
+                  placeholder:text-gray-500
+                  transition-all
+                  duration-300
+                  focus:border-blue-400/50
+                  focus:bg-white/[0.12]
+                  focus:ring-2
+                  focus:ring-blue-500/10
+                "
+              />
+
+              {/* Message */}
+              <textarea
+                rows="4"
+                placeholder="Your Message"
+                className="
+                  w-full
+                  resize-none
+                  rounded-lg
+                  border
+                  border-white/10
+                  bg-white/10
+                  px-4
+                  py-3
+                  text-white
+                  outline-none
+                  placeholder:text-gray-500
+                  transition-all
+                  duration-300
+                  focus:border-purple-400/50
+                  focus:bg-white/[0.12]
+                  focus:ring-2
+                  focus:ring-purple-500/10
+                "
+              />
+
+              {/* Button */}
+              <motion.button
+                type="submit"
+                whileHover={{
+                  scale: 1.02,
+                }}
+                whileTap={{
+                  scale: 0.98,
+                }}
+                transition={{
+                  duration: 0.25,
+                  ease: "easeOut",
+                }}
+                className="
+                  mt-5
+                  w-full
+                  rounded-lg
+                  bg-gradient-to-r
+                  from-blue-500
+                  to-purple-600
+                  py-3
+                  font-semibold
+                  text-white
+                  shadow-lg
+                  shadow-blue-500/20
+                  transition-all
+                  duration-300
+                  hover:shadow-blue-500/40
+                "
+              >
+                Send Message
+              </motion.button>
+
+            </div>
           </motion.form>
-          </div>
-          </div>
-    
+        </div>
+      </div>
     </section>
   );
 };

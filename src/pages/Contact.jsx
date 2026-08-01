@@ -4,24 +4,30 @@ import Footer from "../components/Footer/Footer";
 import ContactHero from "../components/Contact/ContactHero";
 import ContactInfo from "../components/Contact/ContactInfo";
 import ContactMap from "../components/Contact/ContactMap";
-import ContactForm from "../components/Contact/ContactForm";
-import WhyContact from "../components/Contact/WhyContact";
+import GlobalBackground from "../components/GlobalBackground/GlobalBackground";
 
 const Contact = () => {
   return (
-    <>
-      <Navbar />
+    <div className="relative min-h-screen overflow-hidden">
 
-      <main className="bg-[#050816] overflow-hidden">
-        <ContactHero />
-        <ContactInfo />
-        <ContactMap />
-      
-        <WhyContact />
-      </main>
+      {/* Global Background */}
+      <GlobalBackground />
 
-      <Footer />
-    </>
+      {/* Page Content */}
+      <div className="relative z-10">
+
+        <Navbar />
+
+        <main className="overflow-hidden">
+          <ContactHero />
+          <ContactInfo />
+          <ContactMap />
+        </main>
+
+        <Footer />
+
+      </div>
+    </div>
   );
 };
 

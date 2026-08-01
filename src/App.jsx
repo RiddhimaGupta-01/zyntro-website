@@ -32,6 +32,7 @@ function App() {
   return (
     <>
     <ScrollToTop/>
+    <div className="font-sans">
     <Routes>
       {/* Main Pages */}
       <Route path="/" element={<Home />} />
@@ -92,6 +93,7 @@ function App() {
               <Route path="/portfolio" element={<Portfolio/>}/>
 
     </Routes>
+    </div>
     </>
   );
 }

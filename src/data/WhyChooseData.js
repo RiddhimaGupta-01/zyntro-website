@@ -1,42 +1,56 @@
+
+import {
+  FaUserTie,
+  FaTrophy,
+  FaShieldAlt,
+  FaBolt,
+  FaGlobe,
+  FaCogs,
+  FaHeadset,
+  FaRocket,
+} from "react-icons/fa";
+
 export const whyChooseData = [
   {
-    icon: "👨‍💻",
+    icon: FaUserTie,
     title: "Expert Team",
-    desc: "Certified professionals with deep technical expertise."
+    desc: "Certified professionals with deep technical expertise.",
   },
   {
-    icon: "🏆",
+    icon: FaTrophy,
     title: "Proven Track Record",
-    desc: "500+ successful projects with high client satisfaction."
+    desc: "500+ successful projects with high client satisfaction.",
   },
   {
-    icon: "🔒",
+    icon: FaShieldAlt,
     title: "Security First",
-    desc: "Enterprise-grade security practices to protect your data."
+    desc: "Enterprise-grade security practices to protect your data.",
   },
   {
-    icon: "⚡",
+    icon: FaBolt,
     title: "Fast Delivery",
-    desc: "Agile approach for quick project delivery."
+    desc: "Agile approach for quick project delivery.",
   },
   {
-    icon: "🌎",
+    icon: FaGlobe,
     title: "Global Reach",
-    desc: "Serving clients worldwide."
+    desc: "Serving clients worldwide.",
   },
   {
-    icon: "⚙️",
+    icon: FaCogs,
     title: "Custom Solutions",
-    desc: "Solutions designed according to your business needs."
+    desc: "Solutions designed according to your business needs.",
   },
   {
-    icon: "📞",
+    icon: FaHeadset,
     title: "24/7 Support",
-    desc: "Always available when your business needs us."
+    desc: "Always available when your business needs us.",
   },
   {
-    icon: "🚀",
+    icon: FaRocket,
     title: "Latest Technology",
-    desc: "Using modern technologies for better results."
-  }
+    desc: "Using modern technologies for better results.",
+  },
 ];
+
+

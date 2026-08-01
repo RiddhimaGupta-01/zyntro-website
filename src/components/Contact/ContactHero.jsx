@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaArrowDown } from "react-icons/fa";
 
 const ContactHero = () => {
   return (
-    <section className="relative overflow-hidden bg-[#050816] pt-4 pb-2">
+   <section className="relative overflow-hidden  pt-32 pb-10">
 
-      {/* Blue Glow */}
-      <div className="absolute -top-40 left-0 h-96 w-96 rounded-full bg-blue-500/20 blur-[150px]" />
+      {/* Blue Glow */}=
+      
 
       {/* Purple Glow */}
       <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-purple-500/20 blur-[150px]" />
@@ -42,7 +41,7 @@ const ContactHero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: .8 }}
-          className="mt-8 sm:mt-12 text-center text-3xl md:text-4xl font-bold text-white leading-tight"
+         className="text-center text-3xl md:text-4xl font-bold text-white leading-tight"
         >
           Let's Build The
           <br />
@@ -73,17 +72,6 @@ const ContactHero = () => {
         >
         </motion.div>
 
-        {/* Scroll */}
-        <motion.div
-          animate={{ y: [0, 12, 0] }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-          }}
-          className="mt-8 flex justify-center"
-        >
-          <FaArrowDown className="text-blue-400 text-xl" />
-        </motion.div>
 
       </div>
     </section>

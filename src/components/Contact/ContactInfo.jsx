@@ -49,7 +49,7 @@ const highlights = [
 
 const ContactInfo = () => {
     return (
-        <section className="bg-[#050816] py-24">
+        <section className="relative py-24">
             <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
 
                 {/* Left Side */}
@@ -99,7 +99,7 @@ const ContactInfo = () => {
                            <motion.div
     key={index}
     whileHover={{ y: -8 }}
-    className={`rounded-3xl border border-white/10 bg-[#0B1220] p-6
+   className={`rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6
     hover:border-cyan-400 transition-all duration-300
     hover:shadow-[0_0_30px_rgba(59,130,246,.25)]
    ${card.title === "Office Address"

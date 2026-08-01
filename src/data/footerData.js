@@ -47,7 +47,7 @@ export const company = [
   },
   {
     title: "Leadership Message",
-    link: "/leadership",
+    link: "/director-message",
   },
   {
     title: "Portfolio",

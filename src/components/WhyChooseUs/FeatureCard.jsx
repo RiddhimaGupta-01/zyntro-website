@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const FeatureCard = ({ feature }) => {
+const FeatureCard = ({ feature, index }) => {
   const Icon = feature.icon;
 
   return (
@@ -11,20 +11,24 @@ const FeatureCard = ({ feature }) => {
       }}
       transition={{ duration: 0.3 }}
      className="
-group
-relative
-overflow-hidden
-rounded-3xl
-border border-white/10
-bg-[#0B1220]/90
-p-3 sm:p-8
-backdrop-blur-xl
-transition-all
-duration-500
-hover:-translate-y-3
-hover:border-blue-500/40
-hover:shadow-[0_0_45px_rgba(37,99,235,0.25)]
-"
+ group
+  relative
+  flex
+  h-full
+  min-h-[260px]
+  flex-col
+  overflow-hidden
+  rounded-3xl
+  border border-white/10
+  bg-[#0B1220]/90
+  p-3 sm:p-8
+  backdrop-blur-xl
+  transition-all
+  duration-500
+  hover:-translate-y-3
+  hover:border-blue-500/40
+  hover:shadow-[0_0_45px_rgba(37,99,235,0.25)]
+  "
     >
 
       <div

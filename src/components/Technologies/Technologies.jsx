@@ -1,21 +1,12 @@
 import { motion } from "framer-motion";
 import logo from "../../assets/navbar/zyntro.png";
 import { technologies } from "../../data/technologiesData";
+import GlobalBackground from "../GlobalBackground/GlobalBackground";
 const Technologies = () => {
   return (
-    <section className="relative overflow-hidden bg-[#050816] py-28">
-      {/* Blue Glow */}
-      <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[140px]" />
-
-      {/* Purple Glow */}
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[140px]" />
-      <motion.div
-        className="absolute w-2 h-2 rounded-full bg-cyan-400"
-        style={{ top: "18%", left: "12%" }}
-        animate={{ y: [-10, 10, -10] }}
-        transition={{ duration: 4, repeat: Infinity }}
-      />
-
+    <section className="relative overflow-hidden  py-28">
+   
+ <GlobalBackground />
       <motion.div
         className="absolute w-3 h-3 rounded-full bg-blue-500"
         style={{ top: "30%", right: "15%" }}
@@ -73,30 +64,50 @@ const Technologies = () => {
 
           {/* Title */}
 
-          <h2
-            className="
-      mt-8
-      text-4xl
-      md:text-6xl
-      font-bold
-      leading-tight
-      text-white
-    "
-          >
-            Building Future with
-            <br />
-            <span
+         
+          <h2 className="mt-5 text-4xl font-bold leading-tight md:text-5xl">
+          
+            {/* First Line */}
+            <motion.span
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.9,
+                ease: "easeInOut",
+              }}
               className="
-        bg-gradient-to-r
-        from-cyan-400
-        via-blue-300
-        to-purple-400
-        bg-clip-text
-        text-transparent
-      "
+                block text-white
+                overflow-hidden
+                whitespace-nowrap
+              "
+            >Building Future 
+            </motion.span>
+          
+            {/* Second Line */}
+            <motion.span
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 2,
+                delay: 0.8,
+                ease: "easeInOut",
+              }}
+              className="
+                block
+                overflow-hidden
+                whitespace-nowrap
+                bg-gradient-to-r
+                from-blue-400
+                to-purple-500
+                bg-clip-text
+                text-transparent
+              "
             >
-              Modern Technologies
-            </span>
+           With Modern Technologies
+            </motion.span>
+          
           </h2>
 
           {/* Description */}
@@ -116,30 +127,65 @@ const Technologies = () => {
           </p>
         </motion.div>
         <div className="mt-12 grid lg:grid-cols-2 gap-12 items-center">
-          {/* LEFT SIDE */}
-          <div className="flex justify-center">
+       <motion.div
+  initial={{
+    opacity: 0,
+    x: -220,
+    scale: 0.85,
+  }}
+  whileInView={{
+    opacity: 1,
+    x: 0,
+    scale: 1,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.25,
+  }}
+  transition={{
+    duration: 1.3,
+    ease: [0.16, 1, 0.3, 1],
+  }}
+  className="flex justify-center"
+>
             <div
               className="relative flex items-center justify-center
 w-[300px] h-[300px]
 sm:w-[360px] sm:h-[360px]
 lg:w-[460px] lg:h-[460px]"
             >
-              {/* Outer Orbit */}
-              <div
-                className="absolute
-w-[240px] h-[240px]
-sm:w-[300px] sm:h-[300px]
-lg:w-[360px] lg:h-[360px]
-rounded-full border border-dashed border-blue-500/20"
-              />
+          {/* Outer Orbit */}
+<div
+  className="
+    absolute
+    inset-0
+    rounded-full
+    border border-blue-400/60
+    shadow-[0_0_8px_rgba(59,130,246,0.65),0_0_22px_rgba(59,130,246,0.35)]
+  "
+/>
 
-              <div
-                className="absolute
-w-[300px] h-[300px]
-sm:w-[360px] sm:h-[360px]
-lg:w-[460px] lg:h-[460px]
-rounded-full border border-dashed border-purple-500/15"
-              />
+{/* Second Orbit */}
+<div
+  className="
+    absolute
+    inset-[8%]
+    rounded-full
+    border border-purple-400/45
+    shadow-[0_0_8px_rgba(168,85,247,0.45),0_0_18px_rgba(168,85,247,0.20)]
+  "
+/>
+
+{/* Third Orbit */}
+<div
+  className="
+    absolute
+    inset-[17%]
+    rounded-full
+    border border-blue-400/30
+    shadow-[0_0_6px_rgba(59,130,246,0.30)]
+  "
+/>
               {/* Center Circle */}
               <div
                 className="
@@ -249,7 +295,11 @@ lg:w-20 lg:h-20
                 </div>
               </div>
             </div>
-          </div>
+          
+          
+</motion.div>
+
+{/* RIGHT SIDE */}
 
           {/* RIGHT SIDE */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-col-4 gap-4 md:gap-8 max-w-2xl ml-auto">
@@ -305,82 +355,3 @@ lg:w-20 lg:h-20
 
 export default Technologies;
 
-// import { motion } from "framer-motion";
-// import logo from "../../assets/navbar/zyntro.png";
-// import { technologies } from "../../data/technologiesData";
-
-// const Technologies = () => {
-//   return (
-//     <section className="relative overflow-hidden bg-[#050816] py-28">
-
-//       <div className="mx-auto max-w-7xl px-6">
-
-//         {/* Heading */}
-//         <motion.div
-//           initial={{ opacity: 0, y: 40 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6 }}
-//           className="text-center"
-//         >
-//           <span className="inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-5 py-2 text-sm font-semibold tracking-[3px] text-cyan-300">
-//             TECHNOLOGIES WE MASTER
-//           </span>
-
-//           <h2 className="mt-6 text-4xl font-bold leading-tight text-white md:text-5xl">
-//             Building Modern Digital Products
-//             <br />
-//             with Powerful Technologies
-//           </h2>
-
-//           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-400">
-//             We use modern frameworks and technologies to develop
-//             fast, secure and scalable web & mobile applications.
-//           </p>
-//         </motion.div>
-
-//         {/* Floating Tech Cloud */}
-//         <div className="mt-24 flex justify-center">
-
-//   <div
-//     className="
-//       relative
-//       w-full
-//       max-w-6xl
-//       h-[650px]
-//       rounded-[40px]
-//       border border-white/10
-//       bg-gradient-to-br
-//       from-[#0B1120]/80
-//       via-[#111827]/70
-//       to-[#1E1B4B]/70
-//       backdrop-blur-2xl
-//       overflow-hidden
-//     "
-//   >
-
-//     {/* Blue Glow */}
-//     <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-blue-500/20 blur-[120px]" />
-
-//     {/* Purple Glow */}
-//     <div className="absolute -right-20 bottom-16 h-72 w-72 rounded-full bg-purple-500/20 blur-[120px]" />
-
-//   </div>
-
-// </div>
-//         <div className="mt-24 flex justify-center">
-
-//           <div className="relative h-[520px] w-full max-w-5xl rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl">
-
-//             {/* Step 2 me yahan logo aur technologies aayengi */}
-
-//           </div>
-
-//         </div>
-
-//       </div>
-
-//     </section>
-//   );
-// };
-
-// export default Technologies;

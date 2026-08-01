@@ -10,9 +10,14 @@ import HomeContact from "../components/Home/HomeContact";
 import Portfolio from "./Portfolio.jsx";
 import HomePortfolio from "../components/Home/HomePortfolio.jsx";
 
+import PageTransition from "../components/Animations/PageTransition";
+
+
+
 const Home = () => {
   return (
     <>
+    <PageTransition />
       <Navbar />
       <Hero />
       <Services />

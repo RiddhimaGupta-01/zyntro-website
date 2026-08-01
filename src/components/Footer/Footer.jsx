@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
 import logo from "../../assets/navbar/zyntro.logo.png";
 import FooterColumn from "./FooterColumn";
 import SocialIcons from "./SocialIcons";
@@ -23,7 +22,7 @@ to-[#1A1035] border-t border-white/10 "
       <div className="absolute -top-40 left-20 w-80 h-80 bg-blue-500/10 blur-[140px] rounded-full" />
       <div className="absolute bottom-0 right-20 w-80 h-80 bg-purple-500/10 blur-[140px] rounded-full" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand */}
 
@@ -55,38 +54,15 @@ to-[#1A1035] border-t border-white/10 "
 
         {/* Divider */}
 
-        <div className="my-14 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+        <div className="my-14 h-px bg-gradient-to-r  from-transparent via-blue-500/40 to-transparent" />
 
         {/* Bottom */}
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-5">
-          <p className="text-gray-500 text-sm text-center md:text-left">
-            © 2026 Zyntro Software Solutions Pvt. Ltd. All Rights Reserved.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6">
-            <NavLink
-              to="/privacy-policy"
-              className="text-sm text-gray-500 hover:text-blue-400 transition"
-            >
-              Privacy Policy
-            </NavLink>
-
-            <NavLink
-              to="/terms"
-              className="text-sm text-gray-500 hover:text-blue-400 transition"
-            >
-              Terms & Conditions
-            </NavLink>
-
-            <NavLink
-              to="/sitemap"
-              className="text-sm text-gray-500 hover:text-blue-400 transition"
-            >
-              Sitemap
-            </NavLink>
-          </div>
-        </div>
+        <div className="flex flex-col md:flex-row justify-center items-center">
+  <p className="text-gray-500 text-sm text-center">
+    © 2026 Zyntro Software Solutions Pvt. Ltd. All Rights Reserved.
+  </p>
+</div>
       </div>
     </motion.footer>
   );
