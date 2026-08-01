@@ -81,7 +81,7 @@ const Technologies = () => {
                 overflow-hidden
                 whitespace-nowrap
               "
-            >Building Future 
+            >Building Future With
             </motion.span>
           
             {/* Second Line */}
@@ -105,7 +105,7 @@ const Technologies = () => {
                 text-transparent
               "
             >
-           With Modern Technologies
+           Modern Technologies
             </motion.span>
           
           </h2>

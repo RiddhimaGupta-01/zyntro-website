@@ -8,18 +8,22 @@ import WhyChooseCard from "./WhyChooseCard";
 import GlobalBackground from "../GlobalBackground/GlobalBackground";
 
 const About = () => {
-  return (
-    <div className="relative min-h-screen  text-white">
-      {/* Global Background */}
-      <GlobalBackground />
+    return (
+  <div className="relative min-h-screen text-white">
 
-      {/* Main Content */}
-      <div className="relative z-10">
-        {/* Navbar */}
-        <Navbar />
+    {/* Global Background */}
+    <GlobalBackground />
 
-        {/* Hero / About Intro */}
-        <section className="px-6 pt-28 pb-16">
+    {/* ================= NAVBAR ================= */}
+    <div className="relative z-[100]">
+      <Navbar />
+    </div>
+
+    {/* ================= MAIN CONTENT ================= */}
+    <main className="relative z-10">
+
+      {/* Hero / About Intro */}
+      <section className="px-6 pt-28 pb-16">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-4xl text-center">
 
@@ -440,18 +444,8 @@ const About = () => {
 
 
 
-            {/* <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-  {whyChooseData.map((item, index) => (
-    <WhyChooseCard
-      key={item.id || index}
-      icon={item.icon}
-      title={item.title}
-      desc={item.desc}
-    />
-  ))}
-</div>
 
-          */} </div>
+           </div>
         </section>
 
         {/* FAQ */}
@@ -459,8 +453,10 @@ const About = () => {
 
         {/* Footer */}
         <Footer />
-      </div>
+        
+      </main>
     </div>
+    
   );
 };
 
