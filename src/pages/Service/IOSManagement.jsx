@@ -1,4 +1,3 @@
-
 import iosManagementGif from "../../assets/services/IOS Management.gif";
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -7,7 +6,6 @@ import OtherServices from "../../components/Services/OtherServices";
 import ServiceCTA from "../../components/Services/ServiceCTA";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
 
 const features = [
   "Device Enrollment & Provisioning — Zero-touch setup with Apple Business Manager (ABM).",
@@ -21,40 +19,48 @@ const features = [
 
 const IOSManagement = () => {
   return (
-    <main className="min-h-screen text-white">
-      {/* Global Background */}
-      <GlobalBackground />
-
-      {/* Main Content */}
-      <div className="relative z-10">
+    <main className="min-h-screen overflow-x-hidden text-white">
+      <div className="relative z-10 overflow-x-hidden">
         <Navbar />
 
         {/* ================= HERO SECTION ================= */}
         <section className="overflow-hidden pb-16 pt-28 sm:pt-32 lg:pb-20 lg:pt-36">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            {/* ================= TYPEWRITER HEADING ================= */}
-            <div className="mb-14 flex justify-center lg:mb-16">
+            {/* ================= HEADING ================= */}
+            <div className="mb-12 flex justify-center sm:mb-14 lg:mb-16">
               <motion.h1
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true, amount: 0.8 }}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.8,
+                }}
                 transition={{
-                  duration: 1.5,
-                  ease: "easeInOut",
+                  duration: 0.8,
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 className="
-                  overflow-hidden
-                  whitespace-nowrap
+                  w-full
+                  max-w-4xl
+                  px-2
                   text-center
-                  text-4xl
+                  text-3xl
                   font-bold
                   leading-tight
                   sm:text-5xl
                   lg:text-6xl
                 "
               >
-                <span className="text-white">iOS </span>
+                <span className="text-white">
+                  iOS{" "}
+                </span>
 
                 <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   Management
@@ -63,7 +69,7 @@ const IOSManagement = () => {
             </div>
 
             {/* ================= IMAGE + CONTENT ================= */}
-            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="grid w-full min-w-0 items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
               {/* ================= LEFT IMAGE ================= */}
               <motion.div
@@ -83,8 +89,16 @@ const IOSManagement = () => {
                   duration: 1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative flex justify-center lg:justify-start"
+                className="
+                  relative
+                  flex
+                  min-w-0
+                  justify-center
+                  overflow-hidden
+                  lg:justify-start
+                "
               >
+
                 {/* Blue Glow */}
                 <motion.div
                   animate={{
@@ -97,6 +111,7 @@ const IOSManagement = () => {
                     ease: "easeInOut",
                   }}
                   className="
+                    pointer-events-none
                     absolute
                     h-[300px]
                     w-[300px]
@@ -111,6 +126,7 @@ const IOSManagement = () => {
                 {/* Purple Glow */}
                 <div
                   className="
+                    pointer-events-none
                     absolute
                     left-10
                     top-10
@@ -124,6 +140,7 @@ const IOSManagement = () => {
                   "
                 />
 
+                {/* IMAGE */}
                 <motion.img
                   src={iosManagementGif}
                   alt="iOS Management"
@@ -138,11 +155,14 @@ const IOSManagement = () => {
                   className="
                     relative
                     z-10
-                    w-full
-                    max-w-[380px]
+                    h-auto
+                    w-[280px]
+                    max-w-full
                     rounded-3xl
                     object-contain
-                    sm:max-w-[420px]
+                    sm:w-[380px]
+                    md:w-[420px]
+                    lg:w-full
                     lg:max-w-[450px]
                   "
                 />
@@ -167,7 +187,11 @@ const IOSManagement = () => {
                   delay: 0.15,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-center lg:text-left"
+                className="
+                  min-w-0
+                  text-center
+                  lg:text-left
+                "
               >
                 <p className="text-sm leading-8 text-gray-300 sm:text-base lg:text-lg">
                   Our{" "}
@@ -206,8 +230,8 @@ const IOSManagement = () => {
         </section>
 
         {/* ================= KEY FEATURES ================= */}
-        <section className="pb-16 lg:pb-20">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="overflow-hidden pb-16 lg:pb-20">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
             {/* Section Heading */}
             <motion.h2
@@ -226,13 +250,19 @@ const IOSManagement = () => {
               transition={{
                 duration: 0.7,
               }}
-              className="mb-8 text-3xl font-bold text-white sm:text-4xl"
+              className="
+                mb-8
+                text-3xl
+                font-bold
+                text-white
+                sm:text-4xl
+              "
             >
               Key Features
             </motion.h2>
 
             {/* Feature Cards */}
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+            <div className="grid min-w-0 gap-4 sm:grid-cols-2 sm:gap-5">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -258,6 +288,7 @@ const IOSManagement = () => {
                   }}
                   className="
                     flex
+                    min-w-0
                     items-start
                     gap-4
                     rounded-xl
@@ -265,16 +296,30 @@ const IOSManagement = () => {
                     border-white/10
                     bg-[#0B1220]
                     p-5
-                    transition-colors
+                    transition-all
                     duration-300
                     hover:border-blue-500/40
                     hover:shadow-lg
                     hover:shadow-blue-500/10
                   "
                 >
-                  <FaCheckCircle className="mt-1 flex-shrink-0 text-lg text-blue-500" />
+                  <FaCheckCircle
+                    className="
+                      mt-1
+                      flex-shrink-0
+                      text-lg
+                      text-blue-500
+                    "
+                  />
 
-                  <span className="text-sm leading-7 text-gray-300 sm:text-base">
+                  <span className="
+                    min-w-0
+                    break-words
+                    text-sm
+                    leading-7
+                    text-gray-300
+                    sm:text-base
+                  ">
                     {feature}
                   </span>
                 </motion.div>

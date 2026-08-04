@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import logo from "../../assets/navbar/zyntro.png";
 import { technologies } from "../../data/technologiesData";
-import GlobalBackground from "../GlobalBackground/GlobalBackground";
+
 const Technologies = () => {
   return (
     <section className="relative overflow-hidden  py-28">
    
- <GlobalBackground />
       <motion.div
         className="absolute w-3 h-3 rounded-full bg-blue-500"
         style={{ top: "30%", right: "15%" }}
@@ -66,49 +65,49 @@ const Technologies = () => {
 
          
           <h2 className="mt-5 text-4xl font-bold leading-tight md:text-5xl">
-          
-            {/* First Line */}
-            <motion.span
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.9,
-                ease: "easeInOut",
-              }}
-              className="
-                block text-white
-                overflow-hidden
-                whitespace-nowrap
-              "
-            >Building Future With
-            </motion.span>
-          
-            {/* Second Line */}
-            <motion.span
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 2,
-                delay: 0.8,
-                ease: "easeInOut",
-              }}
-              className="
-                block
-                overflow-hidden
-                whitespace-nowrap
-                bg-gradient-to-r
-                from-blue-400
-                to-purple-500
-                bg-clip-text
-                text-transparent
-              "
-            >
-           Modern Technologies
-            </motion.span>
-          
-          </h2>
+  {/* First Line */}
+  <motion.span
+    initial={{ width: 0 }}
+    whileInView={{ width: "100%" }}
+    viewport={{ once: true }}
+    transition={{
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    }}
+    className="
+      block
+      overflow-hidden
+      whitespace-nowrap
+      text-white
+    "
+  >
+    Building Future With
+  </motion.span>
+
+  {/* Second Line */}
+  <motion.span
+    initial={{ width: 0 }}
+    whileInView={{ width: "100%" }}
+    viewport={{ once: true }}
+    transition={{
+      duration: 1.1,
+      delay: 0.35,
+      ease: [0.16, 1, 0.3, 1],
+    }}
+    className="
+      block
+      overflow-hidden
+      whitespace-nowrap
+      bg-gradient-to-r
+      from-blue-400
+      to-purple-500
+      bg-clip-text
+      text-transparent
+    "
+  >
+    Modern Technologies
+  </motion.span>
+</h2>
 
           {/* Description */}
 
@@ -300,18 +299,31 @@ lg:w-20 lg:h-20
 </motion.div>
 
 {/* RIGHT SIDE */}
-
-          {/* RIGHT SIDE */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-col-4 gap-4 md:gap-8 max-w-2xl ml-auto">
-            {technologies.map((tech, index) => (
-              <motion.div
-                key={tech.name}
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.01 }}
-                whileHover={{ y: -6 }}
-                className="
+<div className="grid grid-cols-2 gap-4 md:gap-6 max-w-2xl ml-auto">
+  {technologies.map((tech, index) => (
+    <motion.div
+      key={tech.name}
+      initial={{
+        opacity: 0,
+        x: 40,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.15,
+      }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.05,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      whileHover={{
+        y: -6,
+      }}
+      className="
         group
         rounded-xl
         border
@@ -324,29 +336,33 @@ lg:w-20 lg:h-20
         hover:border-cyan-400
         hover:shadow-[0_0_30px_rgba(59,130,246,.25)]
       "
-              >
-                <div className="flex flex-col sm:flex-row items-start gap-4">
-                  <div className="w-12 h-12 sm:w-12 sm:h-12 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                    <img
-                      src={tech.logo}
-                      alt={tech.name}
-                      className="w-7 h-7 object-contain"
-                    />
-                  </div>
+    >
+      <div className="flex flex-col sm:flex-row items-start gap-4">
 
-                  <div>
-                    <h3 className="text-sm sm:text-base font-semibold text-white">
-                      {tech.name}
-                    </h3>
+        {/* Icon */}
+        <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+          <img
+            src={tech.logo}
+            alt={tech.name}
+            className="w-7 h-7 object-contain"
+          />
+        </div>
 
-                    <p className="mt-1 text-xs text-gray-400 leading-5 break-words">
-                      {tech.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        {/* Content */}
+        <div>
+          <h3 className="text-sm sm:text-base font-semibold text-white">
+            {tech.name}
+          </h3>
+
+          <p className="mt-1 text-xs text-gray-400 leading-5 break-words">
+            {tech.description}
+          </p>
+        </div>
+
+      </div>
+    </motion.div>
+  ))}
+</div>
         </div>
       </div>
     </section>

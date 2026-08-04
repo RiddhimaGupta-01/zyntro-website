@@ -7,7 +7,6 @@ import Navbar from "../../components/Navbar/Navbar";
 import OtherServices from "../../components/Services/OtherServices";
 import ServiceCTA from "../../components/Services/ServiceCTA";
 import Footer from "../../components/Footer/Footer";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
 
 const features = [
   "IT Strategy & Planning — Align IT initiatives with business goals and digital transformation.",
@@ -21,36 +20,33 @@ const features = [
 
 const ITManagement = () => {
   return (
-    <main className="min-h-screen text-white">
-      {/* Global Background */}
-      <GlobalBackground />
-
-      {/* Main Content */}
-      <div className="relative z-10">
+    <main className="min-h-screen overflow-x-hidden text-white">
+      {/* ================= MAIN CONTENT ================= */}
+      <div className="relative z-10 min-w-0">
         <Navbar />
 
         {/* ================= HERO SECTION ================= */}
         <section className="overflow-hidden pb-16 pt-28 sm:pt-32 lg:pb-20 lg:pt-36">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            {/* ================= TYPEWRITER HEADING ================= */}
+            {/* ================= HEADING ================= */}
             <div className="mb-14 flex justify-center lg:mb-16">
               <motion.h1
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.8 }}
                 transition={{
-                  duration: 1.5,
-                  ease: "easeInOut",
+                  duration: 0.8,
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 className="
-                  overflow-hidden
-                  whitespace-nowrap
+                  max-w-full
                   text-center
                   text-4xl
                   font-bold
                   leading-tight
                   sm:text-5xl
+                  lg:whitespace-nowrap
                   lg:text-6xl
                 "
               >
@@ -63,7 +59,7 @@ const ITManagement = () => {
             </div>
 
             {/* ================= IMAGE + CONTENT ================= */}
-            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="grid min-w-0 items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
               {/* ================= LEFT IMAGE ================= */}
               <motion.div
@@ -83,7 +79,14 @@ const ITManagement = () => {
                   duration: 1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative flex justify-center lg:justify-start"
+                className="
+                  relative
+                  flex
+                  min-w-0
+                  justify-center
+                  overflow-visible
+                  lg:justify-start
+                "
               >
                 {/* Blue Glow */}
                 <motion.div
@@ -97,9 +100,10 @@ const ITManagement = () => {
                     ease: "easeInOut",
                   }}
                   className="
+                    pointer-events-none
                     absolute
-                    h-[300px]
-                    w-[300px]
+                    h-[260px]
+                    w-[260px]
                     rounded-full
                     bg-blue-500/20
                     blur-[100px]
@@ -111,11 +115,12 @@ const ITManagement = () => {
                 {/* Purple Glow */}
                 <div
                   className="
+                    pointer-events-none
                     absolute
                     left-10
                     top-10
-                    h-[220px]
-                    w-[220px]
+                    h-[200px]
+                    w-[200px]
                     rounded-full
                     bg-purple-500/15
                     blur-[80px]
@@ -124,6 +129,7 @@ const ITManagement = () => {
                   "
                 />
 
+                {/* Image */}
                 <motion.img
                   src={itManagementGif}
                   alt="IT Management"
@@ -138,7 +144,9 @@ const ITManagement = () => {
                   className="
                     relative
                     z-10
+                    h-auto
                     w-64
+                    max-w-full
                     object-contain
                     sm:w-80
                     md:w-96
@@ -167,9 +175,14 @@ const ITManagement = () => {
                   delay: 0.15,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-center lg:text-left"
+                className="
+                  min-w-0
+                  text-center
+                  lg:text-left
+                "
               >
-                <p className="text-sm leading-8 text-gray-300 sm:text-base lg:text-lg">
+                {/* Description */}
+                <p className="break-words text-sm leading-8 text-gray-300 sm:text-base lg:text-lg">
                   Our{" "}
                   <span className="font-semibold text-white">
                     IT Management
@@ -207,8 +220,8 @@ const ITManagement = () => {
         </section>
 
         {/* ================= KEY FEATURES ================= */}
-        <section className="pb-16 lg:pb-20">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="overflow-hidden pb-16 lg:pb-20">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
             {/* Section Heading */}
             <motion.h2
@@ -227,13 +240,20 @@ const ITManagement = () => {
               transition={{
                 duration: 0.7,
               }}
-              className="mb-8 text-3xl font-bold text-white sm:text-4xl"
+              className="
+                mb-8
+                text-3xl
+                font-bold
+                leading-tight
+                text-white
+                sm:text-4xl
+              "
             >
               Key Features
             </motion.h2>
 
             {/* Feature Cards */}
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+            <div className="grid min-w-0 gap-4 sm:grid-cols-2 sm:gap-5">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -259,6 +279,7 @@ const ITManagement = () => {
                   }}
                   className="
                     flex
+                    min-w-0
                     items-start
                     gap-4
                     rounded-xl
@@ -273,9 +294,16 @@ const ITManagement = () => {
                     hover:shadow-blue-500/10
                   "
                 >
-                  <FaCheckCircle className="mt-1 flex-shrink-0 text-lg text-blue-500" />
+                  <FaCheckCircle
+                    className="
+                      mt-1
+                      flex-shrink-0
+                      text-lg
+                      text-blue-500
+                    "
+                  />
 
-                  <span className="text-sm leading-7 text-gray-300 sm:text-base">
+                  <span className="min-w-0 break-words text-sm leading-7 text-gray-300 sm:text-base">
                     {feature}
                   </span>
                 </motion.div>
@@ -284,7 +312,7 @@ const ITManagement = () => {
           </div>
         </section>
 
-        {/* ================= OTHER SERVICES ================= */}
+        {/* ================= CTA / OTHER SERVICES ================= */}
         <OtherServices currentSlug="it-management" />
 
         {/* ================= FOOTER ================= */}
@@ -295,6 +323,7 @@ const ITManagement = () => {
 };
 
 export default ITManagement;
+
 
 
 // import itManagementGif from "../../assets/services/IT Management.gif";

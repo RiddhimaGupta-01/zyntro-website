@@ -1,38 +1,32 @@
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import GlobalBackground from "../GlobalBackground/GlobalBackground";
-
 const HomeContact = () => {
   return (
     <section className="relative overflow-hidden py-20">
-      <GlobalBackground />
+     
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
 
           {/* ================= LEFT CONTENT ================= */}
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -100,
-              scale: 0.96,
-              filter: "blur(8px)",
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-              scale: 1,
-              filter: "blur(0px)",
-            }}
-            viewport={{
-              once: true,
-              amount: 0.25,
-            }}
-            transition={{
-              duration: 1.1,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
+  initial={{
+    opacity: 0,
+    x: -60,
+  }}
+  whileInView={{
+    opacity: 1,
+    x: 0,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.25,
+  }}
+  transition={{
+    duration: 0.65,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+>
             {/* Small Heading */}
             <p className="text-lg uppercase tracking-widest text-blue-400">
               Get In Touch
@@ -199,19 +193,21 @@ const HomeContact = () => {
         <motion.form
   initial={{
     opacity: 0,
-    x: 60,
+    x: 35,
+    scale: 0.98,
   }}
   whileInView={{
     opacity: 1,
     x: 0,
+    scale: 1,
   }}
   viewport={{
     once: true,
-    amount: 0.2,
+    amount: 0.15,
   }}
   transition={{
-    duration: 0.7,
-    ease: "easeOut",
+    duration: 0.45,
+    ease: [0.16, 1, 0.3, 1],
   }}
   className="
     group

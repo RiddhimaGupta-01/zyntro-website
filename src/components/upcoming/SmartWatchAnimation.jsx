@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import watch from "../../assets/upcoming/watch.png";
+import watch from "../../assets/upcoming/watch.webp";
 
 const particles = [
   { left: "20%", top: "25%" },

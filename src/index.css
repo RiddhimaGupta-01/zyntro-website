@@ -37,3 +37,103 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #6366f1 #050816;
 }
+
+.hero-reveal {
+  animation: heroReveal 0.65s ease-out both;
+}
+
+.hero-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.hero-delay-2 {
+  animation-delay: 0.22s;
+}
+
+@keyframes heroReveal {
+  from {
+    transform: translateY(18px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   LIGHTWEIGHT BACKGROUND ANIMATIONS
+   ========================================================= */
+
+@keyframes slowFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(30px, -20px, 0) scale(1.05);
+  }
+}
+
+@keyframes slowFloatReverse {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-30px, 25px, 0) scale(1.08);
+  }
+}
+
+@keyframes dotFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+    opacity: 0.55;
+  }
+}
+
+@keyframes dotFloatReverse {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0.5;
+  }
+}
+
+/* Reduce animation for users who prefer less motion */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+@keyframes navbar-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar-spin {
+  animation: navbar-spin 4s linear infinite;
+  will-change: transform;
+}

@@ -1,33 +1,55 @@
+import { lazy, Suspense } from "react";
+
 import Navbar from "../components/Navbar/Navbar.jsx";
 import Hero from "../components/Hero/Hero.jsx";
-import Services from "../components/Services/Services.jsx";
-import About from "../components/About/About.jsx";
-import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs.jsx";
-
-import Footer from "../components/Footer/Footer.jsx";
-import Technologies from "../components/Technologies/Technologies.jsx";
-import HomeContact from "../components/Home/HomeContact";
-import Portfolio from "./Portfolio.jsx";
-import HomePortfolio from "../components/Home/HomePortfolio.jsx";
-
-import PageTransition from "../components/Animations/PageTransition";
 
 
+// Below-the-fold components
+const Services = lazy(() =>
+  import("../components/Services/Services.jsx")
+);
+
+const Technologies = lazy(() =>
+  import("../components/Technologies/Technologies.jsx")
+);
+
+const WhyChooseUs = lazy(() =>
+  import("../components/WhyChooseUs/WhyChooseUs.jsx")
+);
+
+const HomePortfolio = lazy(() =>
+  import("../components/Home/HomePortfolio.jsx")
+);
+
+const HomeContact = lazy(() =>
+  import("../components/Home/HomeContact.jsx")
+);
+
+const Footer = lazy(() =>
+  import("../components/Footer/Footer.jsx")
+);
 
 const Home = () => {
   return (
     <>
-    <PageTransition />
+   
+
       <Navbar />
+
       <Hero />
-      <Services />
-      <Technologies />
-      <WhyChooseUs />
-      <HomePortfolio/>
-      <HomeContact />
-      <Footer />
+
+      <Suspense fallback={null}>
+        <Services />
+        <Technologies />
+        <WhyChooseUs />
+        <HomePortfolio />
+        <HomeContact />
+        <Footer />
+      </Suspense>
     </>
   );
 };
 
 export default Home;
+
+

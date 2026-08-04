@@ -5,14 +5,13 @@ import PortfolioHero from "../components/Portfolio/PortfolioHero";
 import CompanyStats from "../components/Portfolio/ComanyStats";
 import PanIndia from "../components/Portfolio/PanIndia";
 import PlatformDeliver from "../components/Portfolio/PlatFormDeliver.";
-import GlobalBackground from "../components/GlobalBackground/GlobalBackground";
+
 
 const Portfolio = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
 
-      {/* Global Background */}
-      <GlobalBackground />
+      
 
       {/* Page Content */}
       <div className="relative z-10">

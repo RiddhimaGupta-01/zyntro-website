@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import MLAnimation from "../../components/upcoming/MLAnimation";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
+
 
 
 const MLModules = () => {
@@ -12,8 +12,7 @@ const MLModules = () => {
 
       <section className="relative overflow-hidden  pt-24 pb-16 lg:pt-36 lg:pb-20">
 
-        {/* ================= GLOBAL BACKGROUND ================= */}
-        <GlobalBackground />
+    
 
         {/* ================= CONTENT ================= */}
         <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -149,7 +148,7 @@ const MLModules = () => {
 <motion.div
   initial={{
     opacity: 0,
-    scale: 0.65,
+    scale: 0.78,
   }}
   whileInView={{
     opacity: 1,
@@ -160,15 +159,15 @@ const MLModules = () => {
     amount: 0.2,
   }}
   transition={{
-    duration: 0.5,
-    ease: [0.22, 1, 0.36, 1],
+    duration: 0.35,
+    ease: [0.16, 1, 0.3, 1],
   }}
   whileHover={{
     y: -10,
     scale: 1.02,
     transition: {
-      duration: 0.25,
-      ease: [0.22, 1, 0.36, 1],
+      duration: 0.2,
+      ease: "easeOut",
     },
   }}
   className="group relative mt-20 overflow-hidden rounded-[32px] border border-white/10 bg-[#141414]/90 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.18)] sm:p-8 lg:p-10"
@@ -215,7 +214,7 @@ const MLModules = () => {
 <motion.div
   initial={{
     opacity: 0,
-    scale: 0.65,
+    scale: 0.78,
   }}
   whileInView={{
     opacity: 1,
@@ -226,15 +225,15 @@ const MLModules = () => {
     amount: 0.2,
   }}
   transition={{
-    duration: 0.5,
-    ease: [0.22, 1, 0.36, 1],
+    duration: 0.35,
+    ease: [0.16, 1, 0.3, 1],
   }}
   whileHover={{
     y: -10,
     scale: 1.02,
     transition: {
-      duration: 0.25,
-      ease: [0.22, 1, 0.36, 1],
+      duration: 0.2,
+      ease: "easeOut",
     },
   }}
   className="group relative mt-20 overflow-hidden rounded-[32px] border border-white/10 bg-[#141414]/90 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.18)] sm:p-8 lg:p-10"

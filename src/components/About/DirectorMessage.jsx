@@ -3,7 +3,7 @@ import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar"; 
 import { FaUserTie } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import GlobalBackground from "../GlobalBackground/GlobalBackground";
+
 import { useEffect, useState } from "react";
 
 const DirectorMessage = () => {
@@ -29,7 +29,7 @@ useEffect(() => {
 
     
     <div className=" min-h-screen relative  text-white">
-      <GlobalBackground />
+      
        <div className="relative z-10">
             <Navbar/>
 

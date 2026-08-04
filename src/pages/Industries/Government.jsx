@@ -1,8 +1,5 @@
-
-import government from "../../assets/industries/government.png";
+import government from "../../assets/industries/government.webp";
 import { motion } from "framer-motion";
-
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -10,7 +7,7 @@ const Government = () => {
   return (
     <main className="min-h-screen text-white">
       {/* Global Background */}
-      <GlobalBackground />
+  
 
       {/* Main Content */}
       <div className="relative z-10">

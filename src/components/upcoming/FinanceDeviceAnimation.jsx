@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import tabletPhone from "../../assets/upcoming/tablet.png";
+import tabletPhone from "../../assets/upcoming/tablet.webp";
 
 const particles = [
   { left: "20%", top: "25%" },

@@ -1,5 +1,6 @@
 
-import digitalMarketingGif from "../../assets/services/Digital Marketing.gif";
+import digitalMarketingVideo from "../../assets/services/Digital Marketing.webm";
+
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -7,7 +8,6 @@ import OtherServices from "../../components/Services/OtherServices";
 import ServiceCTA from "../../components/Services/ServiceCTA";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
 
 const features = [
   "Search Engine Optimization (SEO) — Improve rankings through keyword research, on-page optimization, technical SEO, and quality link building.",
@@ -22,40 +22,48 @@ const features = [
 
 const DigitalMarketing = () => {
   return (
-    <main className="min-h-screen text-white">
-      {/* Global Background */}
-      <GlobalBackground />
-
-      {/* Main Content */}
-      <div className="relative z-10">
+    <main className="min-h-screen overflow-x-hidden bg-transparent text-white">
+      <div className="relative z-10 overflow-x-hidden">
         <Navbar />
 
-        {/* ================= HERO SECTION ================= */}
+        {/* ================= HERO ================= */}
         <section className="overflow-hidden pb-16 pt-28 sm:pt-32 lg:pb-20 lg:pt-36">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            {/* ================= TYPEWRITER HEADING ================= */}
-            <div className="mb-14 flex justify-center lg:mb-16">
+            {/* ================= HEADING ================= */}
+            <div className="mb-12 flex justify-center sm:mb-14 lg:mb-16">
               <motion.h1
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true, amount: 0.8 }}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.8,
+                }}
                 transition={{
-                  duration: 1.5,
-                  ease: "easeInOut",
+                  duration: 0.8,
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 className="
-                  overflow-hidden
-                  whitespace-nowrap
+                  w-full
+                  max-w-4xl
+                  px-2
                   text-center
-                  text-4xl
+                  text-3xl
                   font-bold
                   leading-tight
                   sm:text-5xl
                   lg:text-6xl
                 "
               >
-                <span className="text-white">Digital </span>
+                <span className="text-white">
+                  Digital{" "}
+                </span>
 
                 <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   Marketing
@@ -64,13 +72,13 @@ const DigitalMarketing = () => {
             </div>
 
             {/* ================= IMAGE + CONTENT ================= */}
-            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="grid w-full items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
-              {/* ================= LEFT IMAGE ================= */}
+              {/* ================= IMAGE ================= */}
               <motion.div
                 initial={{
                   opacity: 0,
-                  x: -120,
+                  x: -80,
                 }}
                 whileInView={{
                   opacity: 1,
@@ -81,53 +89,68 @@ const DigitalMarketing = () => {
                   amount: 0.25,
                 }}
                 transition={{
-                  duration: 1,
+                  duration: 0.8,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative flex justify-center lg:justify-start"
+                className="
+                  relative
+                  flex
+                  min-w-0
+                  justify-center
+                  overflow-hidden
+                  lg:justify-start
+                "
               >
-                {/* Blue Glow */}
+
+                {/* BLUE GLOW */}
                 <motion.div
                   animate={{
-                    scale: [1, 1.08, 1],
-                    opacity: [0.3, 0.45, 0.3],
+                    scale: [1, 1.06, 1],
+                    opacity: [0.25, 0.4, 0.25],
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 5,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
                   className="
+                    pointer-events-none
                     absolute
-                    h-[300px]
-                    w-[300px]
+                    h-[280px]
+                    w-[280px]
                     rounded-full
                     bg-blue-500/20
                     blur-[100px]
-                    sm:h-[420px]
-                    sm:w-[420px]
+                    sm:h-[400px]
+                    sm:w-[400px]
                   "
                 />
 
-                {/* Purple Glow */}
+                {/* PURPLE GLOW */}
                 <div
                   className="
+                    pointer-events-none
                     absolute
                     left-10
                     top-10
-                    h-[220px]
-                    w-[220px]
+                    h-[200px]
+                    w-[200px]
                     rounded-full
-                    bg-purple-500/15
+                    bg-purple-500/10
                     blur-[80px]
-                    sm:h-[280px]
-                    sm:w-[280px]
+                    sm:h-[260px]
+                    sm:w-[260px]
                   "
                 />
 
-                <motion.img
-                  src={digitalMarketingGif}
-                  alt="Digital Marketing"
+                {/* VIDEO */}
+                <motion.video
+                  src={digitalMarketingVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
                   initial={{ scale: 0.9 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -139,7 +162,9 @@ const DigitalMarketing = () => {
                   className="
                     relative
                     z-10
-                    w-64
+                    h-auto
+                    w-[260px]
+                    max-w-full
                     object-contain
                     sm:w-80
                     md:w-96
@@ -149,11 +174,11 @@ const DigitalMarketing = () => {
                 />
               </motion.div>
 
-              {/* ================= RIGHT CONTENT ================= */}
+              {/* ================= CONTENT ================= */}
               <motion.div
                 initial={{
                   opacity: 0,
-                  x: 120,
+                  x: 80,
                 }}
                 whileInView={{
                   opacity: 1,
@@ -164,11 +189,15 @@ const DigitalMarketing = () => {
                   amount: 0.25,
                 }}
                 transition={{
-                  duration: 1,
-                  delay: 0.15,
+                  duration: 0.8,
+                  delay: 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-center lg:text-left"
+                className="
+                  min-w-0
+                  text-center
+                  lg:text-left
+                "
               >
                 <p className="text-sm leading-8 text-gray-300 sm:text-base lg:text-lg">
                   Our{" "}
@@ -187,16 +216,18 @@ const DigitalMarketing = () => {
                 <motion.div
                   initial={{
                     opacity: 0,
-                    y: 25,
+                    y: 20,
                   }}
                   whileInView={{
                     opacity: 1,
                     y: 0,
                   }}
-                  viewport={{ once: true }}
+                  viewport={{
+                    once: true,
+                  }}
                   transition={{
-                    duration: 0.7,
-                    delay: 0.5,
+                    duration: 0.6,
+                    delay: 0.35,
                   }}
                   className="mt-8 flex justify-center lg:justify-start"
                 >
@@ -208,14 +239,13 @@ const DigitalMarketing = () => {
         </section>
 
         {/* ================= KEY FEATURES ================= */}
-        <section className="pb-16 lg:pb-20">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="overflow-hidden pb-16 lg:pb-20">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            {/* Section Heading */}
             <motion.h2
               initial={{
                 opacity: 0,
-                y: 25,
+                y: 20,
               }}
               whileInView={{
                 opacity: 1,
@@ -226,21 +256,27 @@ const DigitalMarketing = () => {
                 amount: 0.3,
               }}
               transition={{
-                duration: 0.7,
+                duration: 0.6,
               }}
-              className="mb-8 text-3xl font-bold text-white sm:text-4xl"
+              className="
+                mb-8
+                text-3xl
+                font-bold
+                text-white
+                sm:text-4xl
+              "
             >
               Key Features
             </motion.h2>
 
-            {/* Feature Cards */}
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+            {/* FEATURE CARDS */}
+            <div className="grid min-w-0 gap-4 sm:grid-cols-2 sm:gap-5">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{
                     opacity: 0,
-                    y: 30,
+                    y: 25,
                   }}
                   whileInView={{
                     opacity: 1,
@@ -248,11 +284,11 @@ const DigitalMarketing = () => {
                   }}
                   viewport={{
                     once: true,
-                    amount: 0.25,
+                    amount: 0.2,
                   }}
                   transition={{
-                    duration: 0.5,
-                    delay: index * 0.08,
+                    duration: 0.45,
+                    delay: index * 0.06,
                     ease: "easeOut",
                   }}
                   whileHover={{
@@ -260,23 +296,33 @@ const DigitalMarketing = () => {
                   }}
                   className="
                     flex
+                    min-w-0
                     items-start
                     gap-4
                     rounded-xl
                     border
                     border-white/10
-                    bg-[#0B1220]
+                    bg-white/[0.04]
                     p-5
-                    transition-colors
+                    backdrop-blur-sm
+                    transition-all
                     duration-300
                     hover:border-blue-500/40
+                    hover:bg-white/[0.06]
                     hover:shadow-lg
                     hover:shadow-blue-500/10
                   "
                 >
-                  <FaCheckCircle className="mt-1 flex-shrink-0 text-lg text-blue-500" />
+                  <FaCheckCircle
+                    className="
+                      mt-1
+                      flex-shrink-0
+                      text-lg
+                      text-blue-500
+                    "
+                  />
 
-                  <span className="text-sm leading-7 text-gray-300 sm:text-base">
+                  <span className="min-w-0 break-words text-sm leading-7 text-gray-300 sm:text-base">
                     {feature}
                   </span>
                 </motion.div>

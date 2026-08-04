@@ -1,8 +1,7 @@
-
-import energyGif from "../../assets/industries/energy.gif";
+import energyWebm from "../../assets/industries/energy.webm";
 import { motion } from "framer-motion";
 
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -10,7 +9,7 @@ const Energy = () => {
   return (
     <main className="min-h-screen text-white">
       {/* Global Background */}
-      <GlobalBackground />
+    
 
       {/* Main Content */}
       <div className="relative z-10">
@@ -127,37 +126,29 @@ const Energy = () => {
                     lg:right-10
                   "
                 />
-
-                {/* Image */}
-                <motion.img
-                  src={energyGif}
-                  alt="Energy and Utilities"
-                  initial={{
-                    scale: 0.9,
-                  }}
-                  whileInView={{
-                    scale: 1,
-                  }}
-                  viewport={{
-                    once: true,
-                  }}
-                  transition={{
-                    duration: 1,
-                    delay: 0.15,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="
-                    relative
-                    z-10
-                    h-auto
-                    max-h-[280px]
-                    w-auto
-                    max-w-[90%]
-                    object-contain
-                    sm:max-h-[340px]
-                    lg:max-h-[420px]
-                  "
-                />
+<motion.video
+  src={energyWebm}
+  autoPlay
+  loop
+  muted
+  playsInline
+  aria-label="Energy"
+  initial={{ scale: 0.9 }}
+  whileInView={{ scale: 1 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 1,
+    delay: 0.15,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="
+    relative
+    z-10
+    h-auto
+    w-full
+    object-contain
+  "
+/>
               </motion.div>
 
               {/* ================= RIGHT CONTENT ================= */}

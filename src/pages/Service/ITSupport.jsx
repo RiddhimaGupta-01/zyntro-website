@@ -2,12 +2,12 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-import itSupportGif from "../../assets/services/IT Support.gif";
+import itSupportWebm from "../../assets/services/ITSupport.webm";
+
 import Navbar from "../../components/Navbar/Navbar";
 import OtherServices from "../../components/Services/OtherServices";
 import ServiceCTA from "../../components/Services/ServiceCTA";
 import Footer from "../../components/Footer/Footer";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
 
 const features = [
   {
@@ -46,31 +46,37 @@ const features = [
 
 const ITSupport = () => {
   return (
-    <main className="min-h-screen text-white">
-      {/* Global Background */}
-      <GlobalBackground />
-
-      {/* Main Content */}
-      <div className="relative z-10">
+    <main className="min-h-screen w-full overflow-x-hidden text-white">
+      {/* ================= MAIN CONTENT ================= */}
+      <div className="relative z-10 w-full overflow-x-hidden">
         <Navbar />
 
         {/* ================= HERO SECTION ================= */}
-        <section className="overflow-hidden pb-16 pt-28 sm:pt-32 lg:pb-20 lg:pt-36">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="w-full overflow-hidden pb-16 pt-28 sm:pt-32 lg:pb-20 lg:pt-36">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            {/* ================= TYPEWRITER HEADING ================= */}
-            <div className="mb-14 flex justify-center lg:mb-16">
+            {/* ================= HEADING ================= */}
+            <div className="mb-14 flex w-full justify-center px-2 lg:mb-16">
               <motion.h1
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true, amount: 0.8 }}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.8,
+                }}
                 transition={{
-                  duration: 1.5,
-                  ease: "easeInOut",
+                  duration: 0.8,
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 className="
-                  overflow-hidden
-                  whitespace-nowrap
+                  w-full
+                  max-w-full
                   text-center
                   text-4xl
                   font-bold
@@ -88,7 +94,7 @@ const ITSupport = () => {
             </div>
 
             {/* ================= IMAGE + CONTENT ================= */}
-            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="grid w-full min-w-0 items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
               {/* ================= LEFT IMAGE ================= */}
               <motion.div
@@ -108,9 +114,16 @@ const ITSupport = () => {
                   duration: 1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative flex justify-center lg:justify-start"
+                className="
+                  relative
+                  flex
+                  min-w-0
+                  justify-center
+                  overflow-visible
+                  lg:justify-start
+                "
               >
-                {/* Blue Glow */}
+                {/* ================= BLUE GLOW ================= */}
                 <motion.div
                   animate={{
                     scale: [1, 1.08, 1],
@@ -122,6 +135,7 @@ const ITSupport = () => {
                     ease: "easeInOut",
                   }}
                   className="
+                    pointer-events-none
                     absolute
                     h-[300px]
                     w-[300px]
@@ -133,9 +147,10 @@ const ITSupport = () => {
                   "
                 />
 
-                {/* Purple Glow */}
+                {/* ================= PURPLE GLOW ================= */}
                 <div
                   className="
+                    pointer-events-none
                     absolute
                     left-10
                     top-10
@@ -149,11 +164,17 @@ const ITSupport = () => {
                   "
                 />
 
-                {/* Image Container */}
+                {/* ================= VIDEO CONTAINER ================= */}
                 <motion.div
-                  initial={{ scale: 0.9 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
+                  initial={{
+                    scale: 0.9,
+                  }}
+                  whileInView={{
+                    scale: 1,
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
                   transition={{
                     duration: 1.1,
                     delay: 0.15,
@@ -162,27 +183,34 @@ const ITSupport = () => {
                   className="
                     relative
                     z-10
+                    w-full
+                    max-w-[450px]
                     rounded-3xl
                     bg-white
-                    p-6
+                    p-5
                     shadow-[0_0_40px_rgba(37,99,235,0.25)]
                     sm:p-8
                   "
                 >
-                  <img
-                    src={itSupportGif}
-                    alt="IT Support"
+                  <motion.video
+                    src={itSupportWebm}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    aria-label="IT Support"
                     className="
                       relative
                       z-10
-                      h-[350px]
+                      block
+                      h-[300px]
                       w-full
-                      max-w-[280px]
+                      max-w-full
                       rounded-3xl
                       object-contain
-                      sm:h-[400px]
-                      sm:max-w-[420px]
-                      lg:max-w-[450px]
+                      sm:h-[380px]
+                      lg:h-[400px]
                     "
                   />
                 </motion.div>
@@ -207,9 +235,13 @@ const ITSupport = () => {
                   delay: 0.15,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-center lg:text-left"
+                className="
+                  min-w-0
+                  text-center
+                  lg:text-left
+                "
               >
-                {/* Tagline */}
+                {/* ================= TAGLINE ================= */}
                 <motion.p
                   initial={{
                     opacity: 0,
@@ -219,17 +251,25 @@ const ITSupport = () => {
                     opacity: 1,
                     y: 0,
                   }}
-                  viewport={{ once: true }}
+                  viewport={{
+                    once: true,
+                  }}
                   transition={{
                     duration: 0.6,
                     delay: 0.3,
                   }}
-                  className="text-base font-medium leading-8 text-cyan-200 sm:text-lg"
+                  className="
+                    text-base
+                    font-medium
+                    leading-8
+                    text-cyan-200
+                    sm:text-lg
+                  "
                 >
                   Reliable 24/7 Technical Support for Modern Businesses
                 </motion.p>
 
-                {/* Description */}
+                {/* ================= DESCRIPTION ================= */}
                 <motion.p
                   initial={{
                     opacity: 0,
@@ -239,22 +279,32 @@ const ITSupport = () => {
                     opacity: 1,
                     y: 0,
                   }}
-                  viewport={{ once: true }}
+                  viewport={{
+                    once: true,
+                  }}
                   transition={{
                     duration: 0.7,
                     delay: 0.4,
                   }}
-                  className="mt-5 text-sm leading-8 text-gray-300 sm:text-base lg:text-lg"
+                  className="
+                    mt-5
+                    text-sm
+                    leading-8
+                    text-gray-300
+                    sm:text-base
+                    lg:text-lg
+                  "
                 >
                   Our IT Support services ensure your organization's technology
-                  runs smoothly and securely. From troubleshooting and monitoring
-                  to cloud management and cybersecurity, we provide reliable IT
-                  solutions tailored to your business needs. Our experienced team
-                  helps minimize downtime, improve productivity, and keep your
-                  systems operating at peak performance.
+                  runs smoothly and securely. From troubleshooting and
+                  monitoring to cloud management and cybersecurity, we provide
+                  reliable IT solutions tailored to your business needs. Our
+                  experienced team helps minimize downtime, improve
+                  productivity, and keep your systems operating at peak
+                  performance.
                 </motion.p>
 
-                {/* CTA */}
+                {/* ================= CTA ================= */}
                 <motion.div
                   initial={{
                     opacity: 0,
@@ -264,12 +314,19 @@ const ITSupport = () => {
                     opacity: 1,
                     y: 0,
                   }}
-                  viewport={{ once: true }}
+                  viewport={{
+                    once: true,
+                  }}
                   transition={{
                     duration: 0.7,
                     delay: 0.55,
                   }}
-                  className="mt-8 flex justify-center lg:justify-start"
+                  className="
+                    mt-8
+                    flex
+                    justify-center
+                    lg:justify-start
+                  "
                 >
                   <ServiceCTA />
                 </motion.div>
@@ -279,10 +336,10 @@ const ITSupport = () => {
         </section>
 
         {/* ================= IT SUPPORT SERVICES ================= */}
-        <section className="pb-16 lg:pb-20">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="w-full overflow-hidden pb-16 lg:pb-20">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            {/* Section Heading */}
+            {/* ================= SECTION HEADING ================= */}
             <motion.h2
               initial={{
                 opacity: 0,
@@ -299,13 +356,21 @@ const ITSupport = () => {
               transition={{
                 duration: 0.7,
               }}
-              className="mb-8 text-3xl font-bold text-white sm:text-4xl"
+              className="
+                mb-8
+                text-center
+                text-3xl
+                font-bold
+                text-white
+                sm:text-4xl
+                lg:text-left
+              "
             >
               Our IT Support Services
             </motion.h2>
 
-            {/* Feature Cards */}
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+            {/* ================= FEATURE CARDS ================= */}
+            <div className="grid w-full min-w-0 gap-4 sm:grid-cols-2 sm:gap-5">
               {features.map((item, index) => (
                 <motion.div
                   key={index}
@@ -331,8 +396,10 @@ const ITSupport = () => {
                   }}
                   className="
                     flex
+                    min-w-0
                     items-start
                     gap-4
+                    overflow-hidden
                     rounded-xl
                     border
                     border-white/10
@@ -345,14 +412,23 @@ const ITSupport = () => {
                     hover:shadow-blue-500/10
                   "
                 >
-                  <FaCheckCircle className="mt-1 flex-shrink-0 text-lg text-cyan-400" />
+                  {/* ================= ICON ================= */}
+                  <FaCheckCircle
+                    className="
+                      mt-1
+                      flex-shrink-0
+                      text-lg
+                      text-cyan-400
+                    "
+                  />
 
-                  <div>
-                    <h3 className="font-semibold text-white">
+                  {/* ================= CARD CONTENT ================= */}
+                  <div className="min-w-0">
+                    <h3 className="break-words font-semibold text-white">
                       {item.title}
                     </h3>
 
-                    <p className="mt-1 text-sm leading-7 text-gray-400 sm:text-base">
+                    <p className="mt-1 break-words text-sm leading-7 text-gray-400 sm:text-base">
                       {item.desc}
                     </p>
                   </div>
@@ -362,7 +438,7 @@ const ITSupport = () => {
           </div>
         </section>
 
-        {/* ================= OTHER SERVICES ================= */}
+        {/* ================= CTA / OTHER SERVICES ================= */}
         <OtherServices currentSlug="it-support" />
 
         {/* ================= FOOTER ================= */}

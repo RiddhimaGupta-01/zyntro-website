@@ -1,9 +1,6 @@
-
-import accountingGif from "../../assets/industries/accounting.gif";
+import accountingWebm from "../../assets/industries/accounting.webm";
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
-
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -21,9 +18,6 @@ const features = [
 const Accounting = () => {
   return (
     <main className="min-h-screen text-white">
-      {/* Global Background */}
-      <GlobalBackground />
-
       {/* Main Content */}
       <div className="relative z-10">
         <Navbar />
@@ -140,10 +134,14 @@ const Accounting = () => {
                   "
                 />
 
-                {/* Image */}
-                <motion.img
-                  src={accountingGif}
-                  alt="Accounting and Finance"
+                {/* Accounting Animation */}
+                <motion.video
+                  src={accountingWebm}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
                   initial={{ scale: 0.9 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}

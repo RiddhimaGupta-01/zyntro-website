@@ -3,7 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import FinanceDeviceAnimation from "../../components/upcoming/FinanceDeviceAnimation";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
+
 import {
   FaCheckCircle,
   FaCreditCard,
@@ -34,7 +34,7 @@ const FinanceApproved = () => {
     <>
      
       <section className="relative overflow-hidden  pt-36 pb-20">
-          <GlobalBackground />
+         
         
               {/* Main Content */}
               <div className="relative z-10"></div>

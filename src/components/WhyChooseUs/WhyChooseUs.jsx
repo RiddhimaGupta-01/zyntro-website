@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { features } from "../../data/featureData";
 import FeatureCard from "./FeatureCard";
-import TechBackground from "../common/TechBackground";
-import GlobalBackground from "../GlobalBackground/GlobalBackground";
+
 const WhyChooseUs = () => {
   return (
  <section className="relative overflow-hidden  py-28">
- <GlobalBackground />
+ 
 <div className="relative z-10 mx-auto max-w-7xl px-6">
   <div className="relative">
 

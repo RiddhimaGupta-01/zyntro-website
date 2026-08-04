@@ -1,8 +1,7 @@
-
-import manufacturingGif from "../../assets/industries/manufacturer.gif";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
+import manufacturerWebm from "../../assets/industries/manufacturer.webm";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import { motion } from "framer-motion";
 
 const Manufacturing = () => {
   return (
@@ -10,7 +9,7 @@ const Manufacturing = () => {
       <Navbar />
 
       <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-20">
-        <GlobalBackground />
+       
 
         <div className="relative z-10 mx-auto max-w-7xl px-6">
 
@@ -39,20 +38,29 @@ const Manufacturing = () => {
               {/* Purple Glow */}
               <div className="absolute right-5 top-5 h-40 w-40 rounded-full bg-purple-500/15 blur-[80px] sm:h-56 sm:w-56" />
 
-              <img
-                src={manufacturingGif}
-                alt="Manufacturing"
-                className="
-                  relative
-                  z-10
-                  h-auto
-                  w-[260px]
-                  object-contain
-                  sm:w-[340px]
-                  md:w-[400px]
-                  lg:w-[450px]
-                "
-              />
+              <motion.video
+  src={manufacturerWebm}
+  autoPlay
+  loop
+  muted
+  playsInline
+  aria-label="Manufacturing"
+  initial={{ scale: 0.9 }}
+  whileInView={{ scale: 1 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 1,
+    delay: 0.15,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="
+    relative
+    z-10
+    h-auto
+    w-full
+    object-contain
+  "
+/>
             </div>
 
             {/* RIGHT CONTENT */}

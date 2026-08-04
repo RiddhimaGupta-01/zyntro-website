@@ -2,7 +2,7 @@
 import legalGif from "../../assets/industries/legal.gif";
 import { motion } from "framer-motion";
 
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -10,7 +10,7 @@ const Legal = () => {
   return (
     <main className="min-h-screen text-white">
       {/* Global Background */}
-      <GlobalBackground />
+   
 
       {/* Main Content */}
       <div className="relative z-10">

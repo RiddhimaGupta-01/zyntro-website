@@ -1,8 +1,5 @@
-
-import educationgif from "../../assets/industries/Education.gif";
+import educationWebm from "../../assets/industries/education.webm";
 import { motion } from "framer-motion";
-
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -10,8 +7,7 @@ const Education = () => {
   return (
     <main className="min-h-screen text-white">
       {/* Global Background */}
-      <GlobalBackground />
-
+   
       {/* Main Content */}
       <div className="relative z-10">
         <Navbar />
@@ -128,18 +124,23 @@ const Education = () => {
                 />
 
                 {/* Image */}
-                <motion.img
-                  src={educationgif}
-                  alt="Education"
-                  initial={{ scale: 0.9 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 1,
-                    delay: 0.15,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="
+                <motion.video
+  src={educationWebm}
+  autoPlay
+  loop
+  muted
+  playsInline
+  aria-label="Education"
+  initial={{ scale: 0.9 }}
+  whileInView={{ scale: 1 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 1,
+    delay: 0.15,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="
+
                     relative
                     z-10
                     h-auto

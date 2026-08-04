@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import ML from "../../assets/upcoming/ML.png";
+import ML from "../../assets/upcoming/ML.webp";
 
 const particles = [
   { left: "20%", top: "25%" },

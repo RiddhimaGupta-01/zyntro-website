@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import indiaMap from "../../assets/portfolio/india.png";
+import indiaMap from "../../assets/portfolio/india.webp";
 
 const PanIndia = () => {
   return (

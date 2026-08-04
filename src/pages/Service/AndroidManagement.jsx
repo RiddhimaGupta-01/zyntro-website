@@ -7,7 +7,6 @@ import ServiceCTA from "../../components/Services/ServiceCTA";
 import OtherServices from "../../components/Services/OtherServices";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
 
 const features = [
   "Comprehensive Device Management",
@@ -21,31 +20,24 @@ const features = [
 
 const AndroidManagement = () => {
   return (
-    <main className="min-h-screen text-white">
-      {/* Global Background */}
-      <GlobalBackground />
-
-      {/* Main Content */}
-      <div className="relative z-10">
+    <main className="min-h-screen overflow-x-hidden text-white">
+      {/* ================= MAIN CONTENT ================= */}
+      <div className="relative z-10 overflow-x-hidden">
         <Navbar />
 
         {/* ================= SERVICE SECTION ================= */}
         <section className="overflow-hidden pb-16 pt-28 lg:pb-20 lg:pt-36">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            {/* ================= TYPEWRITER HEADING ================= */}
+            {/* ================= HEADING ================= */}
             <div className="mb-12 flex justify-center lg:mb-16">
-                 <motion.h1
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true, amount: 0.8 }}
-                transition={{
-                  duration: 1.8,
-                  ease: "easeInOut",
-                }}
+              <motion.h1
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
                 className="
-                  overflow-hidden
-                  whitespace-nowrap
+                  w-full
                   text-center
                   text-4xl
                   font-bold
@@ -54,12 +46,53 @@ const AndroidManagement = () => {
                   lg:text-6xl
                 "
               >
-                <span className="text-white"> Android </span>
-                <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                {/* Android */}
+                <motion.span
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.9,
+                    ease: "easeInOut",
+                  }}
+                  className="
+                    inline-block
+                    overflow-hidden
+                    whitespace-nowrap
+                    align-bottom
+                  "
+                >
+                  Android
+                </motion.span>
+
+                {/* Management */}
+                <motion.span
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.7,
+                    ease: "easeInOut",
+                  }}
+                  className="
+                    mt-1
+                    inline-block
+                    overflow-hidden
+                    whitespace-nowrap
+                    align-bottom
+                    bg-gradient-to-r
+                    from-blue-400
+                    to-purple-500
+                    bg-clip-text
+                    text-transparent
+                    sm:ml-3
+                    sm:mt-0
+                  "
+                >
                   Management
-                </span>
+                </motion.span>
               </motion.h1>
-          
             </div>
 
             {/* ================= IMAGE + CONTENT ================= */}
@@ -83,7 +116,13 @@ const AndroidManagement = () => {
                   duration: 1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative flex justify-center lg:justify-start"
+                className="
+                  relative
+                  flex
+                  min-w-0
+                  justify-center
+                  lg:justify-start
+                "
               >
                 {/* Blue Glow */}
                 <motion.div
@@ -97,6 +136,7 @@ const AndroidManagement = () => {
                     ease: "easeInOut",
                   }}
                   className="
+                    pointer-events-none
                     absolute
                     h-[300px]
                     w-[300px]
@@ -111,6 +151,7 @@ const AndroidManagement = () => {
                 {/* Purple Glow */}
                 <div
                   className="
+                    pointer-events-none
                     absolute
                     right-10
                     top-10
@@ -138,7 +179,8 @@ const AndroidManagement = () => {
                   className="
                     relative
                     z-10
-                    w-80
+                    w-72
+                    max-w-full
                     object-contain
                     sm:w-96
                     lg:w-full
@@ -166,7 +208,11 @@ const AndroidManagement = () => {
                   delay: 0.15,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-center lg:text-left"
+                className="
+                  min-w-0
+                  text-center
+                  lg:text-left
+                "
               >
                 {/* Description */}
                 <p className="text-sm leading-8 text-gray-400 sm:text-base lg:text-lg">
@@ -177,14 +223,20 @@ const AndroidManagement = () => {
 
                 {/* Heading */}
                 <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
                   viewport={{ once: true }}
                   transition={{
                     duration: 0.7,
                     delay: 0.35,
                   }}
-                  className="mt-10 mb-6 text-2xl font-semibold"
+                  className="mb-6 mt-10 text-2xl font-semibold"
                 >
                   Our Android Management Services
                 </motion.h2>
@@ -213,6 +265,7 @@ const AndroidManagement = () => {
                       }}
                       className="
                         flex
+                        min-w-0
                         items-start
                         justify-center
                         gap-3
@@ -222,7 +275,7 @@ const AndroidManagement = () => {
                     >
                       <FaCheckCircle className="mt-1 flex-shrink-0 text-blue-500" />
 
-                      <p className="text-sm leading-7 text-gray-300 sm:text-base">
+                      <p className="min-w-0 text-sm leading-7 text-gray-300 sm:text-base">
                         {feature}
                       </p>
                     </motion.div>
@@ -230,29 +283,30 @@ const AndroidManagement = () => {
                 </div>
               </motion.div>
             </div>
-          </div>
 
-          {/* CTA */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.3,
-            }}
-            transition={{
-              duration: 0.7,
-              delay: 0.2,
-            }}
-          >
-            <ServiceCTA />
-          </motion.div>
+            {/* ================= CTA ================= */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.3,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.2,
+              }}
+              className="mt-12 flex justify-center"
+            >
+              <ServiceCTA />
+            </motion.div>
+          </div>
         </section>
 
         {/* ================= OTHER SERVICES ================= */}
@@ -266,7 +320,6 @@ const AndroidManagement = () => {
 };
 
 export default AndroidManagement;
-
 
 
 // import androidManagement from "../../assets/services/Android Management.gif";

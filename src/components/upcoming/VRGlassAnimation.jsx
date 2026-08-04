@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import VR from "../../assets/upcoming/VR.png";
+import VR from "../../assets/upcoming/VR.webp";
 
 const particles = [
   { left: "20%", top: "25%" },

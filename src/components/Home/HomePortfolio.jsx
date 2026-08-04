@@ -1,9 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import img from "../../assets/portfolio/img.png";
-import bg from "../../assets/bg/bg.png";
+import img from "../../assets/portfolio/img.webp";
 import { Link } from "react-router-dom";
-import GlobalBackground from "../GlobalBackground/GlobalBackground";
+
 
 const HomePortfolio = () => {
   const statsRef = useRef(null);
@@ -28,7 +27,7 @@ const HomePortfolio = () => {
 
   return (
     <section className="relative overflow-hidden py-18">
-       <GlobalBackground />
+       
       
 
       {/* Content */}
@@ -353,53 +352,27 @@ const HomePortfolio = () => {
             {/* Background Glow */}
             <div className="absolute h-80 w-80 rounded-full bg-blue-600/20 blur-3xl" />
 
-
-<motion.img
-  initial={{
-    opacity: 0,
-    scale: 0.65,
-    x: 40,
-  }}
-  whileInView={{
-    opacity: 1,
-    scale: 1,
-    x: 0,
-  }}
-  viewport={{
-    once: true,
-    amount: 0.15,
-  }}
-  transition={{
-    duration: 1.2,
-    ease: "easeOut",
-  }}
-  className="relative z-10 w-full max-w-xl drop-shadow-2xl"
-  src={img}
-  alt="Portfolio Laptop"
-/>
-           {/* <motion.img
+            <motion.img
   initial={{
     opacity: 0,
     scale: 0.75,
-    x: 40,
   }}
   whileInView={{
     opacity: 1,
     scale: 1,
-    x: 0,
   }}
   viewport={{
     once: true,
-    amount: 0.3,
+    amount: 0.2,
   }}
   transition={{
-    duration: 1.2,
-    ease: [0.22, 1, 0.36, 1],
+    duration: 0.7,
+    ease: [0.16, 1, 0.3, 1],
   }}
-  className="relative z-10 w-full max-w-xl drop-shadow-2xl"
   src={img}
-  alt="Portfolio Laptop"
-/> */}
+  alt=""
+  className="..."
+/>
           </div>
         </div>
       </div>

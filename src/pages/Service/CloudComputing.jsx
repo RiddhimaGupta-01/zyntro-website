@@ -1,5 +1,5 @@
 
-import cloudComputingGif from "../../assets/services/Cloud Computing.gif";
+import cloudManagementVideo from "../../assets/services/Cloud Management.webm";
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -7,7 +7,6 @@ import OtherServices from "../../components/Services/OtherServices";
 import ServiceCTA from "../../components/Services/ServiceCTA";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
 
 const features = [
   "Infrastructure as a Service (IaaS) — Scalable virtual servers, storage, and networking to support your business operations.",
@@ -22,31 +21,24 @@ const features = [
 
 const CloudComputing = () => {
   return (
-    <main className="min-h-screen text-white">
-      {/* Global Background */}
-      <GlobalBackground />
-
-      {/* Main Content */}
-      <div className="relative z-10">
+    <main className="min-h-screen overflow-x-hidden text-white">
+      {/* ================= MAIN CONTENT ================= */}
+      <div className="relative z-10 overflow-x-hidden">
         <Navbar />
 
         {/* ================= HERO SECTION ================= */}
         <section className="overflow-hidden pb-16 pt-28 lg:pb-20 lg:pt-36">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            {/* ================= TYPEWRITER HEADING ================= */}
-            <div className="mb-14 flex justify-center lg:mb-16">
+            {/* ================= HEADING ================= */}
+            <div className="mb-12 flex justify-center lg:mb-16">
               <motion.h1
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true, amount: 0.8 }}
-                transition={{
-                  duration: 1.5,
-                  ease: "easeInOut",
-                }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
                 className="
-                  overflow-hidden
-                  whitespace-nowrap
+                  w-full
                   text-center
                   text-4xl
                   font-bold
@@ -55,17 +47,59 @@ const CloudComputing = () => {
                   lg:text-6xl
                 "
               >
-                <span className="text-white">Cloud </span>
-                <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                {/* Cloud */}
+                <motion.span
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.9,
+                    ease: "easeInOut",
+                  }}
+                  className="
+                    inline-block
+                    overflow-hidden
+                    whitespace-nowrap
+                    align-bottom
+                  "
+                >
+                  Cloud
+                </motion.span>
+
+                {/* Computing */}
+                <motion.span
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.7,
+                    ease: "easeInOut",
+                  }}
+                  className="
+                    mt-1
+                    inline-block
+                    overflow-hidden
+                    whitespace-nowrap
+                    align-bottom
+                    bg-gradient-to-r
+                    from-blue-400
+                    to-purple-500
+                    bg-clip-text
+                    text-transparent
+                    sm:ml-3
+                    sm:mt-0
+                  "
+                >
                   Computing
-                </span>
+                </motion.span>
               </motion.h1>
             </div>
 
             {/* ================= IMAGE + CONTENT ================= */}
-            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="grid min-w-0 items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
-              {/* ================= LEFT IMAGE ================= */}
+              {/* ================= LEFT VIDEO ================= */}
               <motion.div
                 initial={{
                   opacity: 0,
@@ -83,7 +117,13 @@ const CloudComputing = () => {
                   duration: 1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative flex justify-center lg:justify-start"
+                className="
+                  relative
+                  flex
+                  min-w-0
+                  justify-center
+                  lg:justify-start
+                "
               >
                 {/* Blue Glow */}
                 <motion.div
@@ -97,6 +137,7 @@ const CloudComputing = () => {
                     ease: "easeInOut",
                   }}
                   className="
+                    pointer-events-none
                     absolute
                     h-[280px]
                     w-[280px]
@@ -111,6 +152,7 @@ const CloudComputing = () => {
                 {/* Purple Glow */}
                 <div
                   className="
+                    pointer-events-none
                     absolute
                     left-10
                     top-10
@@ -124,9 +166,14 @@ const CloudComputing = () => {
                   "
                 />
 
-                <motion.img
-                  src={cloudComputingGif}
-                  alt="Cloud Computing"
+                {/* Cloud Management Video */}
+                <motion.video
+                  src={cloudManagementVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
                   initial={{ scale: 0.9 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -138,11 +185,14 @@ const CloudComputing = () => {
                   className="
                     relative
                     z-10
-                    w-full
-                    max-w-md
-                    rounded-3xl
+                    h-auto
+                    w-72
+                    max-w-full
                     object-contain
-                    sm:max-w-lg
+                    sm:w-96
+                    md:w-[420px]
+                    lg:w-full
+                    lg:max-w-xl
                   "
                 />
               </motion.div>
@@ -166,8 +216,13 @@ const CloudComputing = () => {
                   delay: 0.15,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-center lg:text-left"
+                className="
+                  min-w-0
+                  text-center
+                  lg:text-left
+                "
               >
+                {/* Description */}
                 <p className="text-sm leading-8 text-gray-300 sm:text-base lg:text-lg">
                   Our{" "}
                   <span className="font-semibold text-white">
@@ -222,13 +277,19 @@ const CloudComputing = () => {
                 transition={{
                   duration: 0.7,
                 }}
-                className="mb-8 text-3xl font-bold text-white sm:text-4xl"
+                className="
+                  mb-8
+                  text-3xl
+                  font-bold
+                  text-white
+                  sm:text-4xl
+                "
               >
                 Key Features
               </motion.h2>
 
               {/* Feature Cards */}
-              <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+              <div className="grid min-w-0 gap-4 sm:grid-cols-2 sm:gap-5">
                 {features.map((feature, index) => (
                   <motion.div
                     key={index}
@@ -254,6 +315,7 @@ const CloudComputing = () => {
                     }}
                     className="
                       flex
+                      min-w-0
                       items-start
                       gap-4
                       rounded-xl
@@ -270,7 +332,7 @@ const CloudComputing = () => {
                   >
                     <FaCheckCircle className="mt-1 flex-shrink-0 text-lg text-blue-500" />
 
-                    <span className="text-sm leading-7 text-gray-300 sm:text-base">
+                    <span className="min-w-0 text-sm leading-7 text-gray-300 sm:text-base">
                       {feature}
                     </span>
                   </motion.div>

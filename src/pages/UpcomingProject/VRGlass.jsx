@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import VRGlassAnimation from "../../components/upcoming/VRGlassAnimation";
-import GlobalBackground from "../../components/GlobalBackground/GlobalBackground";
+
 
 const VRGlass = () => {
   return (
@@ -10,8 +10,7 @@ const VRGlass = () => {
       <Navbar />
 
       <section className="relative overflow-hidden pt-24 pb-16 lg:pt-36 lg:pb-20">
-        {/* Global Background */}
-        <GlobalBackground />
+      
 
         <div className="relative z-10 mx-auto max-w-7xl px-6">
 
@@ -92,26 +91,19 @@ const VRGlass = () => {
                 </span>
               </h1>
 
-              <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-gray-300 sm:text-lg sm:leading-8 lg:mx-0">
-                <strong>Zyntro Software Solutions</strong> is thrilled to unveil
-                our ambitious <strong>VR Glasses project,</strong> a
-                next-generation virtual reality platform that promises to
-                transform how users experience digital content, interactive
-                environments, and immersive applications. This cutting-edge
-                technology represents our commitment to pushing the boundaries
-                of human-computer interaction, creating experiences that blur
-                the lines between physical and digital realities.
-                <br />
-                <br />
-                Our VR Glasses combine state-of-the-art optics, advanced motion
-                tracking, and powerful processing capabilities to deliver an
-                unparalleled immersive experience. Whether for gaming,
-                professional training, virtual collaboration, educational
-                simulations, or entertainment, our solution offers crystal-clear
-                visuals, intuitive controls, and seamless integration with
-                existing digital ecosystems, making virtual reality accessible
-                and practical for everyday use.
-              </p>
+            <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-gray-300 sm:text-lg sm:leading-8 lg:mx-0">
+  <strong>Zyntro Software Solutions</strong> is developing an advanced{" "}
+  <strong>VR Glasses project</strong> designed to transform how users
+  experience digital content and immersive environments. Our next-generation
+  platform aims to bridge the gap between physical and digital experiences
+  through innovative virtual reality technology.
+  <br />
+  <br />
+  The VR Glasses combine advanced optics, motion tracking, and powerful
+  processing to deliver immersive visuals and intuitive interaction. The
+  solution is designed for gaming, training, education, collaboration, and
+  entertainment.
+</p>
             </motion.div>
 
             {/* Right Animation */}
@@ -141,33 +133,33 @@ const VRGlass = () => {
           </div>
 
           {/* ================= CARD 1 ================= */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.65,
-            }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
-            transition={{
-              duration: 0.5,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            whileHover={{
-              y: -10,
-              scale: 1.02,
-              transition: {
-                duration: 0.25,
-                ease: [0.22, 1, 0.36, 1],
-              },
-            }}
-            className="group relative mt-20 overflow-hidden rounded-[32px] border border-white/10 bg-[#141414]/90 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.18)] sm:p-8 lg:p-10"
-          >
+        <motion.div
+  initial={{
+    opacity: 0,
+    scale: 0.78,
+  }}
+  whileInView={{
+    opacity: 1,
+    scale: 1,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.2,
+  }}
+  transition={{
+    duration: 0.35,
+    ease: [0.16, 1, 0.3, 1],
+  }}
+  whileHover={{
+    y: -10,
+    scale: 1.02,
+    transition: {
+      duration: 0.2,
+      ease: "easeOut",
+    },
+  }}
+  className="group relative mt-20 overflow-hidden rounded-[32px] border border-white/10 bg-[#141414]/90 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.18)] sm:p-8 lg:p-10"
+>
             {/* Hover Glow */}
             <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-cyan-400/20" />
 
@@ -204,33 +196,33 @@ const VRGlass = () => {
           </motion.div>
 
           {/* ================= CARD 2 ================= */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.65,
-            }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
-            transition={{
-              duration: 0.5,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            whileHover={{
-              y: -10,
-              scale: 1.02,
-              transition: {
-                duration: 0.25,
-                ease: [0.22, 1, 0.36, 1],
-              },
-            }}
-            className="group relative mt-20 overflow-hidden rounded-[32px] border border-white/10 bg-[#141414]/90 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.18)] sm:p-8 lg:p-10"
-          >
+         <motion.div
+  initial={{
+    opacity: 0,
+    scale: 0.78,
+  }}
+  whileInView={{
+    opacity: 1,
+    scale: 1,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.2,
+  }}
+  transition={{
+    duration: 0.35,
+    ease: [0.16, 1, 0.3, 1],
+  }}
+  whileHover={{
+    y: -10,
+    scale: 1.02,
+    transition: {
+      duration: 0.2,
+      ease: "easeOut",
+    },
+  }}
+  className="group relative mt-20 overflow-hidden rounded-[32px] border border-white/10 bg-[#141414]/90 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.18)] sm:p-8 lg:p-10"
+>
             {/* Hover Glow */}
             <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-cyan-400/20" />
 
