@@ -203,71 +203,110 @@ lg:w-[460px] lg:h-[460px]"
         "
               >
                 {/* Orbit Rotation */}
-                <motion.div
-                  className="absolute inset-0"
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 30,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                >
-                  {technologies.map((tech, index) => {
-                    const radius =
-                      window.innerWidth < 640
-                        ? 120
-                        : window.innerWidth < 1024
-                          ? 145
-                          : 180;
-                    const angle = (360 / technologies.length) * index - 90;
+               {/* ================= SMOOTH ORBIT ================= */}
+<motion.div
+  className="absolute inset-0"
+  initial={{
+    opacity: 0,
+    scale: 0.75,
+    rotate: -20,
+  }}
+  whileInView={{
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.25,
+  }}
+  transition={{
+    opacity: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+    scale: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1],
+    },
+    rotate: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }}
+>
+  <motion.div
+    className="absolute inset-0"
+    animate={{ rotate: 360 }}
+    transition={{
+      duration: 40,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  >
+    {technologies.map((tech, index) => {
+      const radius =
+        window.innerWidth < 640
+          ? 120
+          : window.innerWidth < 1024
+            ? 145
+            : 180;
 
-                    const x = radius * Math.cos((angle * Math.PI) / 180);
-                    const y = radius * Math.sin((angle * Math.PI) / 180);
+      const angle =
+        (360 / technologies.length) * index - 90;
 
-                    return (
-                      <div
-                        key={tech.name}
-                        className="absolute left-1/2 top-1/2"
-                        style={{
-                          transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
-                        }}
-                      >
-                        <motion.div
-                          animate={{ rotate: -360 }}
-                          transition={{
-                            duration: 30,
-                            repeat: Infinity,
-                            ease: "linear",
-                          }}
-                          className="
-                  w-14 h-14
-sm:w-16 sm:h-16
-lg:w-20 lg:h-20
-                    rounded-full
-                    bg-[#0F172A]
-                    border
-                    border-blue-500/20
-                    flex
-                    items-center
-                    justify-center
-                    backdrop-blur-xl
-                    transition-all
-                    duration-300
-                    hover:scale-110
-                    hover:border-cyan-400
-                    hover:shadow-[0_0_40px_rgba(59,130,246,.45)]
-                  "
-                        >
-                          <img
-                            src={tech.logo}
-                            alt={tech.name}
-                            className="w-11 h-11 object-contain"
-                          />
-                        </motion.div>
-                      </div>
-                    );
-                  })}
-                </motion.div>
+      const x =
+        radius * Math.cos((angle * Math.PI) / 180);
+
+      const y =
+        radius * Math.sin((angle * Math.PI) / 180);
+
+      return (
+        <div
+          key={tech.name}
+          className="absolute left-1/2 top-1/2"
+          style={{
+            transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
+          }}
+        >
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{
+              duration: 40,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="
+              flex
+              h-14 w-14
+              items-center justify-center
+              rounded-full
+              border border-blue-500/20
+              bg-[#0F172A]
+              backdrop-blur-xl
+              shadow-[0_0_15px_rgba(59,130,246,0.12)]
+              transition-all duration-300
+              hover:scale-110
+              hover:border-cyan-400
+              hover:shadow-[0_0_35px_rgba(59,130,246,0.4)]
+              sm:h-16 sm:w-16
+              lg:h-20 lg:w-20
+            "
+          >
+            <img
+              src={tech.logo}
+              alt={tech.name}
+              width="48"
+              height="48"
+              loading="lazy"
+              className="h-10 w-10 object-contain sm:h-11 sm:w-11 lg:h-12 lg:w-12"
+            />
+          </motion.div>
+        </div>
+      );
+    })}
+  </motion.div>
+</motion.div>
 
                 {/* Glow */}
                 <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-3xl" />
