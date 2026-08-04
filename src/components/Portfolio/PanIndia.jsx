@@ -3,7 +3,7 @@ import indiaMap from "../../assets/portfolio/india.webp";
 
 const PanIndia = () => {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-24">
+    <section className="relative overflow-hidden pt-20 pb-8 lg:pt-24 lg:pb-10">
       
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">

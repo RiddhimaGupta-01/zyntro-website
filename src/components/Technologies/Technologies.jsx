@@ -4,7 +4,7 @@ import { technologies } from "../../data/technologiesData";
 
 const Technologies = () => {
   return (
-    <section className="relative overflow-hidden  py-28">
+    <section className="relative overflow-hidden pt-20 pb-16 lg:pt-24 lg:pb-16">
    
       <motion.div
         className="absolute w-3 h-3 rounded-full bg-blue-500"

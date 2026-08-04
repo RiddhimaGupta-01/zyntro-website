@@ -9,7 +9,7 @@ import {
 
 const Services = () => {
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden pt-20 pb-8 lg:pt-24 lg:pb-10">
    
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">

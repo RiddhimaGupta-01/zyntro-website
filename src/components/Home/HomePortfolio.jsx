@@ -352,10 +352,12 @@ const HomePortfolio = () => {
             {/* Background Glow */}
             <div className="absolute h-80 w-80 rounded-full bg-blue-600/20 blur-3xl" />
 
-            <motion.img
+<motion.img
+  src={img}
+  alt=""
   initial={{
     opacity: 0,
-    scale: 0.75,
+    scale: 0.92,
   }}
   whileInView={{
     opacity: 1,
@@ -363,15 +365,13 @@ const HomePortfolio = () => {
   }}
   viewport={{
     once: true,
-    amount: 0.2,
+    amount: 0.15,
   }}
   transition={{
-    duration: 0.7,
-    ease: [0.16, 1, 0.3, 1],
+    duration: 0.5,
+    ease: [0.22, 1, 0.36, 1],
   }}
-  src={img}
-  alt=""
-  className="..."
+  className="block w-full h-auto object-contain"
 />
           </div>
         </div>

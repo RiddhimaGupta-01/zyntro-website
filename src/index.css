@@ -3,7 +3,10 @@
 @theme {
   --font-sans: "Inter", sans-serif;
 }
-/* ===== Custom Scrollbar ===== */
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+   ========================================================= */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -38,6 +41,10 @@ html {
   scrollbar-color: #6366f1 #050816;
 }
 
+/* =========================================================
+   HERO ANIMATION
+   ========================================================= */
+
 .hero-reveal {
   animation: heroReveal 0.65s ease-out both;
 }
@@ -52,10 +59,12 @@ html {
 
 @keyframes heroReveal {
   from {
+    opacity: 0;
     transform: translateY(18px);
   }
 
   to {
+    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -112,17 +121,10 @@ html {
   }
 }
 
-/* Reduce animation for users who prefer less motion */
+/* =========================================================
+   NAVBAR SPIN
+   ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
 @keyframes navbar-spin {
   from {
     transform: rotate(0deg);
@@ -136,4 +138,31 @@ html {
 .navbar-spin {
   animation: navbar-spin 4s linear infinite;
   will-change: transform;
+}
+
+/* =========================================================
+   IMAGE DEFAULTS
+   IMPORTANT:
+   Don't apply transform/backface to every image.
+   It can interfere with navbar/logo sizing.
+   ========================================================= */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

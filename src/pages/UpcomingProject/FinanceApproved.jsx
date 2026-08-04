@@ -127,287 +127,498 @@ Upcoming Project
 </motion.div>
           </div>
           
-{/* Features */}
+{/* ================= FEATURES ================= */}
 <motion.div
   className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 lg:mt-16 lg:grid-cols-4 lg:gap-6"
   initial="hidden"
   whileInView="visible"
-  viewport={{ once: true, amount: 0.15 }}
+  viewport={{
+    once: true,
+    amount: 0.1,
+  }}
   variants={{
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.06,
       },
     },
   }}
 >
-  {/* Instant Approval */}
+  {/* ================= INSTANT APPROVAL ================= */}
   <motion.div
     variants={{
       hidden: {
         opacity: 0,
-        scale: 0.78,
-        y: 35,
+        scale: 0.96,
       },
       visible: {
         opacity: 1,
         scale: 1,
-        y: 0,
         transition: {
-          duration: 0.7,
-          ease: [0.16, 1, 0.3, 1],
+          duration: 0.45,
+          ease: "easeOut",
         },
       },
     }}
     whileHover={{
-      y: -10,
-      scale: 1.025,
-      rotateX: 4,
-      rotateY: -4,
+      y: -4,
+      scale: 1.01,
       transition: {
-        duration: 0.3,
+        duration: 0.18,
         ease: "easeOut",
       },
     }}
-    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#081632]/70 p-5 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_15px_45px_rgba(6,182,212,0.15)] sm:p-6"
-    style={{
-      transformStyle: "preserve-3d",
-      perspective: "1000px",
-    }}
+    className="
+      group relative overflow-hidden
+      rounded-2xl
+      border border-white/10
+      bg-[#081632]/70
+      p-5
+      backdrop-blur-xl
+      transition-[border-color,box-shadow]
+      duration-300
+      hover:border-cyan-400/50
+      hover:shadow-[0_15px_45px_rgba(6,182,212,0.12)]
+      sm:p-6
+    "
   >
     {/* Glow */}
-    <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-cyan-400/20" />
+    <div
+      className="
+        pointer-events-none
+        absolute
+        -right-16
+        -top-16
+        h-32
+        w-32
+        rounded-full
+        bg-cyan-400/10
+        blur-3xl
+        transition-transform
+        duration-500
+        group-hover:scale-125
+      "
+    />
 
     {/* Icon */}
-    <motion.div
-      whileHover={{
-        scale: 1.15,
-        rotate: 5,
-        y: -2,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 15,
-      }}
-      className="relative z-10 w-fit"
-    >
-      <FaCheckCircle className="text-3xl text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.35)]" />
-    </motion.div>
+    <div className="relative z-10 w-fit">
+      <FaCheckCircle
+        className="
+          text-3xl
+          text-cyan-400
+          drop-shadow-[0_0_10px_rgba(34,211,238,0.35)]
+        "
+      />
+    </div>
 
-    <h3 className="relative z-10 mt-5 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-cyan-300 sm:text-xl">
+    {/* Title */}
+    <h3
+      className="
+        relative
+        z-10
+        mt-5
+        text-lg
+        font-semibold
+        text-white
+        transition-colors
+        duration-300
+        group-hover:text-cyan-300
+        sm:text-xl
+      "
+    >
       Instant Approval
     </h3>
 
-    <p className="relative z-10 mt-3 text-sm leading-6 text-gray-400 sm:leading-7">
+    {/* Description */}
+    <p
+      className="
+        relative
+        z-10
+        mt-3
+        text-sm
+        leading-6
+        text-gray-400
+        sm:leading-7
+      "
+    >
       Receive financing decisions within minutes through our
       intelligent approval system.
     </p>
 
     {/* Bottom Light */}
-    <div className="absolute bottom-0 left-1/2 h-[1px] w-0 -translate-x-1/2 bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-500 group-hover:w-3/4" />
+    <div
+      className="
+        absolute
+        bottom-0
+        left-1/2
+        h-px
+        w-0
+        -translate-x-1/2
+        bg-cyan-400
+        shadow-[0_0_12px_rgba(34,211,238,0.7)]
+        transition-[width]
+        duration-300
+        group-hover:w-3/4
+      "
+    />
   </motion.div>
 
-  {/* Flexible EMI */}
+  {/* ================= FLEXIBLE EMI ================= */}
   <motion.div
     variants={{
       hidden: {
         opacity: 0,
-        scale: 0.78,
-        y: 35,
+        scale: 0.96,
       },
       visible: {
         opacity: 1,
         scale: 1,
-        y: 0,
         transition: {
-          duration: 0.7,
-          ease: [0.16, 1, 0.3, 1],
+          duration: 0.45,
+          ease: "easeOut",
         },
       },
     }}
     whileHover={{
-      y: -10,
-      scale: 1.025,
-      rotateX: 4,
-      rotateY: 4,
+      y: -4,
+      scale: 1.01,
       transition: {
-        duration: 0.3,
+        duration: 0.18,
         ease: "easeOut",
       },
     }}
-    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#081632]/70 p-5 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_15px_45px_rgba(6,182,212,0.15)] sm:p-6"
-    style={{
-      transformStyle: "preserve-3d",
-      perspective: "1000px",
-    }}
+    className="
+      group relative overflow-hidden
+      rounded-2xl
+      border border-white/10
+      bg-[#081632]/70
+      p-5
+      backdrop-blur-xl
+      transition-[border-color,box-shadow]
+      duration-300
+      hover:border-cyan-400/50
+      hover:shadow-[0_15px_45px_rgba(6,182,212,0.12)]
+      sm:p-6
+    "
   >
     {/* Glow */}
-    <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-cyan-400/20" />
+    <div
+      className="
+        pointer-events-none
+        absolute
+        -right-16
+        -top-16
+        h-32
+        w-32
+        rounded-full
+        bg-cyan-400/10
+        blur-3xl
+        transition-transform
+        duration-500
+        group-hover:scale-125
+      "
+    />
 
     {/* Icon */}
-    <motion.div
-      whileHover={{
-        scale: 1.15,
-        rotate: -5,
-        y: -2,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 15,
-      }}
-      className="relative z-10 w-fit"
-    >
-      <FaCreditCard className="text-3xl text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.35)]" />
-    </motion.div>
+    <div className="relative z-10 w-fit">
+      <FaCreditCard
+        className="
+          text-3xl
+          text-cyan-400
+          drop-shadow-[0_0_10px_rgba(34,211,238,0.35)]
+        "
+      />
+    </div>
 
-    <h3 className="relative z-10 mt-5 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-cyan-300 sm:text-xl">
+    {/* Title */}
+    <h3
+      className="
+        relative
+        z-10
+        mt-5
+        text-lg
+        font-semibold
+        text-white
+        transition-colors
+        duration-300
+        group-hover:text-cyan-300
+        sm:text-xl
+      "
+    >
       Flexible EMI
     </h3>
 
-    <p className="relative z-10 mt-3 text-sm leading-6 text-gray-400 sm:leading-7">
+    {/* Description */}
+    <p
+      className="
+        relative
+        z-10
+        mt-3
+        text-sm
+        leading-6
+        text-gray-400
+        sm:leading-7
+      "
+    >
       Affordable monthly payment plans designed for different
       financial needs.
     </p>
 
     {/* Bottom Light */}
-    <div className="absolute bottom-0 left-1/2 h-[1px] w-0 -translate-x-1/2 bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-500 group-hover:w-3/4" />
+    <div
+      className="
+        absolute
+        bottom-0
+        left-1/2
+        h-px
+        w-0
+        -translate-x-1/2
+        bg-cyan-400
+        shadow-[0_0_12px_rgba(34,211,238,0.7)]
+        transition-[width]
+        duration-300
+        group-hover:w-3/4
+      "
+    />
   </motion.div>
 
-  {/* Secure Payments */}
+  {/* ================= SECURE PAYMENTS ================= */}
   <motion.div
     variants={{
       hidden: {
         opacity: 0,
-        scale: 0.78,
-        y: 35,
+        scale: 0.96,
       },
       visible: {
         opacity: 1,
         scale: 1,
-        y: 0,
         transition: {
-          duration: 0.7,
-          ease: [0.16, 1, 0.3, 1],
+          duration: 0.45,
+          ease: "easeOut",
         },
       },
     }}
     whileHover={{
-      y: -10,
-      scale: 1.025,
-      rotateX: -4,
-      rotateY: 4,
+      y: -4,
+      scale: 1.01,
       transition: {
-        duration: 0.3,
+        duration: 0.18,
         ease: "easeOut",
       },
     }}
-    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#081632]/70 p-5 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_15px_45px_rgba(6,182,212,0.15)] sm:p-6"
-    style={{
-      transformStyle: "preserve-3d",
-      perspective: "1000px",
-    }}
+    className="
+      group relative overflow-hidden
+      rounded-2xl
+      border border-white/10
+      bg-[#081632]/70
+      p-5
+      backdrop-blur-xl
+      transition-[border-color,box-shadow]
+      duration-300
+      hover:border-cyan-400/50
+      hover:shadow-[0_15px_45px_rgba(6,182,212,0.12)]
+      sm:p-6
+    "
   >
     {/* Glow */}
-    <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-cyan-400/20" />
+    <div
+      className="
+        pointer-events-none
+        absolute
+        -right-16
+        -top-16
+        h-32
+        w-32
+        rounded-full
+        bg-cyan-400/10
+        blur-3xl
+        transition-transform
+        duration-500
+        group-hover:scale-125
+      "
+    />
 
     {/* Icon */}
-    <motion.div
-      whileHover={{
-        scale: 1.15,
-        rotate: 5,
-        y: -2,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 15,
-      }}
-      className="relative z-10 w-fit"
-    >
-      <FaShieldAlt className="text-3xl text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.35)]" />
-    </motion.div>
+    <div className="relative z-10 w-fit">
+      <FaShieldAlt
+        className="
+          text-3xl
+          text-cyan-400
+          drop-shadow-[0_0_10px_rgba(34,211,238,0.35)]
+        "
+      />
+    </div>
 
-    <h3 className="relative z-10 mt-5 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-cyan-300 sm:text-xl">
+    {/* Title */}
+    <h3
+      className="
+        relative
+        z-10
+        mt-5
+        text-lg
+        font-semibold
+        text-white
+        transition-colors
+        duration-300
+        group-hover:text-cyan-300
+        sm:text-xl
+      "
+    >
       Secure Payments
     </h3>
 
-    <p className="relative z-10 mt-3 text-sm leading-6 text-gray-400 sm:leading-7">
+    {/* Description */}
+    <p
+      className="
+        relative
+        z-10
+        mt-3
+        text-sm
+        leading-6
+        text-gray-400
+        sm:leading-7
+      "
+    >
       Bank-grade encryption ensures every transaction remains
       protected.
     </p>
 
     {/* Bottom Light */}
-    <div className="absolute bottom-0 left-1/2 h-[1px] w-0 -translate-x-1/2 bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-500 group-hover:w-3/4" />
+    <div
+      className="
+        absolute
+        bottom-0
+        left-1/2
+        h-px
+        w-0
+        -translate-x-1/2
+        bg-cyan-400
+        shadow-[0_0_12px_rgba(34,211,238,0.7)]
+        transition-[width]
+        duration-300
+        group-hover:w-3/4
+      "
+    />
   </motion.div>
 
-  {/* Enterprise Ready */}
+  {/* ================= ENTERPRISE READY ================= */}
   <motion.div
     variants={{
       hidden: {
         opacity: 0,
-        scale: 0.78,
-        y: 35,
+        scale: 0.96,
       },
       visible: {
         opacity: 1,
         scale: 1,
-        y: 0,
         transition: {
-          duration: 0.7,
-          ease: [0.16, 1, 0.3, 1],
+          duration: 0.45,
+          ease: "easeOut",
         },
       },
     }}
     whileHover={{
-      y: -10,
-      scale: 1.025,
-      rotateX: -4,
-      rotateY: -4,
+      y: -4,
+      scale: 1.01,
       transition: {
-        duration: 0.3,
+        duration: 0.18,
         ease: "easeOut",
       },
     }}
-    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#081632]/70 p-5 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_15px_45px_rgba(6,182,212,0.15)] sm:p-6"
-    style={{
-      transformStyle: "preserve-3d",
-      perspective: "1000px",
-    }}
+    className="
+      group relative overflow-hidden
+      rounded-2xl
+      border border-white/10
+      bg-[#081632]/70
+      p-5
+      backdrop-blur-xl
+      transition-[border-color,box-shadow]
+      duration-300
+      hover:border-cyan-400/50
+      hover:shadow-[0_15px_45px_rgba(6,182,212,0.12)]
+      sm:p-6
+    "
   >
     {/* Glow */}
-    <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-cyan-400/20" />
+    <div
+      className="
+        pointer-events-none
+        absolute
+        -right-16
+        -top-16
+        h-32
+        w-32
+        rounded-full
+        bg-cyan-400/10
+        blur-3xl
+        transition-transform
+        duration-500
+        group-hover:scale-125
+      "
+    />
 
     {/* Icon */}
-    <motion.div
-      whileHover={{
-        scale: 1.15,
-        rotate: -5,
-        y: -2,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 15,
-      }}
-      className="relative z-10 w-fit"
-    >
-      <FaBuilding className="text-3xl text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.35)]" />
-    </motion.div>
+    <div className="relative z-10 w-fit">
+      <FaBuilding
+        className="
+          text-3xl
+          text-cyan-400
+          drop-shadow-[0_0_10px_rgba(34,211,238,0.35)]
+        "
+      />
+    </div>
 
-    <h3 className="relative z-10 mt-5 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-cyan-300 sm:text-xl">
+    {/* Title */}
+    <h3
+      className="
+        relative
+        z-10
+        mt-5
+        text-lg
+        font-semibold
+        text-white
+        transition-colors
+        duration-300
+        group-hover:text-cyan-300
+        sm:text-xl
+      "
+    >
       Enterprise Ready
     </h3>
 
-    <p className="relative z-10 mt-3 text-sm leading-6 text-gray-400 sm:leading-7">
+    {/* Description */}
+    <p
+      className="
+        relative
+        z-10
+        mt-3
+        text-sm
+        leading-6
+        text-gray-400
+        sm:leading-7
+      "
+    >
       Bulk device financing and centralized management for
       organizations.
     </p>
 
     {/* Bottom Light */}
-    <div className="absolute bottom-0 left-1/2 h-[1px] w-0 -translate-x-1/2 bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-500 group-hover:w-3/4" />
+    <div
+      className="
+        absolute
+        bottom-0
+        left-1/2
+        h-px
+        w-0
+        -translate-x-1/2
+        bg-cyan-400
+        shadow-[0_0_12px_rgba(34,211,238,0.7)]
+        transition-[width]
+        duration-300
+        group-hover:w-3/4
+      "
+    />
   </motion.div>
 </motion.div>
 
@@ -429,33 +640,40 @@ Upcoming Project
   }}
 >
   {/* Flexible Financing Card */}
-  <motion.div
-    variants={{
-      hidden: {
-        opacity: 0,
-        x: -120,
-        scale: 0.88,
-      },
-      visible: {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        transition: {
-          duration: 1,
-          ease: [0.16, 1, 0.3, 1],
-        },
-      },
-    }}
-    whileHover={{
-      y: -8,
-      scale: 1.015,
+<motion.div
+  variants={{
+    hidden: {
+      opacity: 0,
+      transform: "translate3d(-35px, 0, 0)",
+    },
+    visible: {
+      opacity: 1,
+      transform: "translate3d(0, 0, 0)",
       transition: {
-        duration: 0.3,
-        ease: "easeOut",
+        duration: 0.45,
+        ease: [0.22, 1, 0.36, 1],
       },
-    }}
-    className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#081632]/70 p-7 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/30 hover:shadow-[0_20px_50px_rgba(34,211,238,0.12)] sm:p-8"
-  >
+    },
+  }}
+  whileHover={{
+    y: -5,
+    transition: {
+      duration: 0.2,
+      ease: "easeOut",
+    },
+  }}
+  className="
+    group relative overflow-hidden rounded-3xl
+    border border-white/10
+    bg-[#081632]/70
+    p-7 backdrop-blur-xl
+    transition-[border-color,box-shadow]
+    duration-300
+    hover:border-cyan-400/30
+    hover:shadow-[0_20px_50px_rgba(34,211,238,0.12)]
+    sm:p-8
+  "
+>
     {/* Glow */}
     <div className="pointer-events-none absolute -left-20 -top-20 h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-cyan-400/15" />
 
@@ -486,33 +704,40 @@ Upcoming Project
 
 
   {/* Enterprise Solutions Card */}
-  <motion.div
-    variants={{
-      hidden: {
-        opacity: 0,
-        x: 120,
-        scale: 0.88,
-      },
-      visible: {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        transition: {
-          duration: 1,
-          ease: [0.16, 1, 0.3, 1],
-        },
-      },
-    }}
-    whileHover={{
-      y: -8,
-      scale: 1.015,
+ <motion.div
+  variants={{
+    hidden: {
+      opacity: 0,
+      transform: "translate3d(35px, 0, 0)",
+    },
+    visible: {
+      opacity: 1,
+      transform: "translate3d(0, 0, 0)",
       transition: {
-        duration: 0.3,
-        ease: "easeOut",
+        duration: 0.45,
+        ease: [0.22, 1, 0.36, 1],
       },
-    }}
-    className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#081632]/70 p-7 backdrop-blur-xl transition-all duration-300 hover:border-purple-400/30 hover:shadow-[0_20px_50px_rgba(168,85,247,0.12)] sm:p-8"
-  >
+    },
+  }}
+  whileHover={{
+    y: -5,
+    transition: {
+      duration: 0.2,
+      ease: "easeOut",
+    },
+  }}
+  className="
+    group relative overflow-hidden rounded-3xl
+    border border-white/10
+    bg-[#081632]/70
+    p-7 backdrop-blur-xl
+    transition-[border-color,box-shadow]
+    duration-300
+    hover:border-purple-400/30
+    hover:shadow-[0_20px_50px_rgba(168,85,247,0.12)]
+    sm:p-8
+  "
+>
     {/* Glow */}
     <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-purple-400/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-purple-400/15" />
 
