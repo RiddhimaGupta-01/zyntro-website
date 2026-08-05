@@ -8,53 +8,101 @@ import {
   cardVariant,
 } from "../../utils/animations";
 
+import typingSound from "../../assets/typing.mp3";
+
 const Services = () => {
   const [typedText, setTypedText] = useState("");
   const [hasStarted, setHasStarted] = useState(false);
+
   const sectionRef = useRef(null);
+  const audioRef = useRef(null);
 
   const text =
     "Future-ready technology for modern businesses. Delivering innovation with confidence and reliability.";
 
-  // ================= TYPEWRITER + AUDIO =================
+  // ================= AUDIO UNLOCK =================
+  useEffect(() => {
+    const unlockAudio = () => {
+      const audio = audioRef.current;
+
+      if (!audio) return;
+
+      audio.volume = 0.18;
+
+      // Unlock audio after first user interaction
+      audio
+        .play()
+        .then(() => {
+          audio.pause();
+          audio.currentTime = 0;
+        })
+        .catch(() => {});
+    };
+
+    window.addEventListener("click", unlockAudio, {
+      once: true,
+    });
+
+    window.addEventListener("touchstart", unlockAudio, {
+      once: true,
+    });
+
+    window.addEventListener("scroll", unlockAudio, {
+      once: true,
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("click", unlockAudio);
+      window.removeEventListener("touchstart", unlockAudio);
+      window.removeEventListener("scroll", unlockAudio);
+    };
+  }, []);
+
+  // ================= TYPEWRITER =================
   useEffect(() => {
     if (!hasStarted) return;
 
     let index = 0;
+    const audio = audioRef.current;
 
-    // Voice
-    if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-
-      const speech = new SpeechSynthesisUtterance(text);
-      speech.rate = 0.95;
-      speech.pitch = 1;
-      speech.volume = 0.8;
-      speech.lang = "en-US";
-
-      window.speechSynthesis.speak(speech);
-    }
-
-    // Typewriter
     const interval = setInterval(() => {
       setTypedText(text.slice(0, index + 1));
+
+      // Play typing sound
+      if (audio) {
+        audio.currentTime = 0;
+        audio.volume = 0.18;
+
+        audio.play().catch(() => {});
+      }
+
       index++;
 
       if (index >= text.length) {
         clearInterval(interval);
+
+        // Stop sound after typing finishes
+        setTimeout(() => {
+          if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+          }
+        }, 100);
       }
-    }, 35);
+    }, 38);
 
     return () => {
       clearInterval(interval);
 
-      if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
       }
     };
   }, [hasStarted]);
 
-  // Start when section enters viewport
+  // ================= START ON VIEW =================
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -79,16 +127,34 @@ const Services = () => {
       ref={sectionRef}
       className="relative overflow-hidden pt-20 pb-8 lg:pt-24 lg:pb-10"
     >
+      {/* ================= TYPING AUDIO ================= */}
+      <audio
+        ref={audioRef}
+        src={typingSound}
+        preload="auto"
+      />
+
       <div className="relative z-10 mx-auto max-w-7xl px-6">
 
         {/* ================= SECTION HEADING ================= */}
         <div className="mx-auto max-w-3xl text-center">
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.45 }}
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.45,
+            }}
             className="text-center text-4xl font-bold text-white md:text-5xl"
           >
             Our{" "}
@@ -99,31 +165,55 @@ const Services = () => {
 
           {/* ================= SUB HEADING ================= */}
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.45, delay: 0.1 }}
+            initial={{
+              opacity: 0,
+              y: 15,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.45,
+              delay: 0.1,
+            }}
             className="mt-5 text-center text-lg font-bold text-white md:text-xl"
           >
             We Build Digital Solutions
           </motion.p>
 
-          {/* ================= TYPEWRITER PARAGRAPH ================= */}
+          {/* ================= TYPEWRITER ================= */}
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            initial={{
+              opacity: 0,
+              y: 10,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.15,
+            }}
             className="mx-auto mt-6 min-h-[56px] max-w-3xl text-center text-base leading-7 text-gray-400 md:text-lg"
           >
             {typedText}
+
             {hasStarted && typedText.length < text.length && (
               <span className="ml-1 animate-pulse text-cyan-400">
                 |
               </span>
             )}
           </motion.p>
-
         </div>
 
         {/* ================= SERVICE CARDS ================= */}
@@ -157,6 +247,7 @@ const Services = () => {
 };
 
 export default Services;
+
 
 
 
