@@ -8,11 +8,11 @@ import {
 export const services = [
   {
     title: "Android Zero Touch",
-    link: "/services/android-zero-touch",
+    link: "/services/android-zero-touch-enrollment",
   },
   {
     title: "Android Management",
-    link: "/services/android-management",
+    link: "/services/android-management-service",
   },
   {
     title: "Cloud Computing",

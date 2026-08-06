@@ -1,6 +1,19 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 const HomeContact = () => {
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
+  };
+
   return (
     <section className="relative overflow-hidden py-20">
      
@@ -191,24 +204,11 @@ const HomeContact = () => {
 
           {/* ================= RIGHT CONTACT FORM ================= */}
         <motion.form
-  initial={{
-    opacity: 0,
-    x: 35,
-    scale: 0.98,
-  }}
-  whileInView={{
-    opacity: 1,
-    x: 0,
-    scale: 1,
-  }}
-  viewport={{
-    once: true,
-    amount: 0.15,
-  }}
-  transition={{
-    duration: 0.45,
-    ease: [0.16, 1, 0.3, 1],
-  }}
+   onSubmit={handleSubmit}
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+  
 className="
   group
   relative
@@ -350,37 +350,31 @@ className="
               />
 
               {/* Button */}
-              <motion.button
-                type="submit"
-                whileHover={{
-                  scale: 1.02,
-                }}
-                whileTap={{
-                  scale: 0.98,
-                }}
-                transition={{
-                  duration: 0.25,
-                  ease: "easeOut",
-                }}
-                className="
-                  mt-5
-                  w-full
-                  rounded-lg
-                  bg-gradient-to-r
-                  from-blue-500
-                  to-purple-600
-                  py-3
-                  font-semibold
-                  text-white
-                  shadow-lg
-                  shadow-blue-500/20
-                  transition-all
-                  duration-300
-                  hover:shadow-blue-500/40
-                "
-              >
-                Send Message
-              </motion.button>
+             <button
+        type="submit"
+        className="
+        w-full
+        py-3
+        rounded-xl
+        bg-gradient-to-r
+        from-blue-500
+        to-purple-600
+        text-white
+        font-semibold
+        hover:scale-105
+        transition
+        "
+      >
+        Send Message
+      </button>
+
+
+      {submitted && (
+        <p className="text-green-400 text-center">
+          Message submitted successfully!
+        </p>
+      )}
+
 
             </div>
           </motion.form>
