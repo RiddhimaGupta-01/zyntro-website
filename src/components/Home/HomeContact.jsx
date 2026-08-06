@@ -209,25 +209,20 @@ const HomeContact = () => {
     duration: 0.45,
     ease: [0.16, 1, 0.3, 1],
   }}
-  className="
-    group
-    relative
-    rounded-2xl
-    border
-    border-white/10
-    bg-gradient-to-br
-    from-white/10
-    to-white/5
-    p-8
-    shadow-2xl
-    shadow-blue-500/10
-    backdrop-blur-xl
-    transition-all
-    duration-500
-    hover:border-blue-400/30
-    hover:shadow-[0_25px_80px_rgba(59,130,246,0.15)]
-  "
->
+className="
+  group
+  relative
+  rounded-2xl
+  border
+  border-white/10
+  bg-transparent
+  backdrop-blur-md
+  p-8
+  transition-all
+  duration-500
+  hover:bg-white/[0.03]
+  hover:border-blue-400/30
+">
             {/* Form Glow */}
             <div
               className="
